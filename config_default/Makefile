@@ -251,6 +251,78 @@ Core/Src/main.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/3D_Printer.dir/build.make CMakeFiles/3D_Printer.dir/Core/Src/main.c.s
 .PHONY : Core/Src/main.c.s
 
+Core/Src/pid.obj: Core/Src/pid.c.obj
+.PHONY : Core/Src/pid.obj
+
+# target to build an object file
+Core/Src/pid.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/3D_Printer.dir/build.make CMakeFiles/3D_Printer.dir/Core/Src/pid.c.obj
+.PHONY : Core/Src/pid.c.obj
+
+Core/Src/pid.i: Core/Src/pid.c.i
+.PHONY : Core/Src/pid.i
+
+# target to preprocess a source file
+Core/Src/pid.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/3D_Printer.dir/build.make CMakeFiles/3D_Printer.dir/Core/Src/pid.c.i
+.PHONY : Core/Src/pid.c.i
+
+Core/Src/pid.s: Core/Src/pid.c.s
+.PHONY : Core/Src/pid.s
+
+# target to generate assembly for a file
+Core/Src/pid.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/3D_Printer.dir/build.make CMakeFiles/3D_Printer.dir/Core/Src/pid.c.s
+.PHONY : Core/Src/pid.c.s
+
+Core/Src/protocol_praser.obj: Core/Src/protocol_praser.c.obj
+.PHONY : Core/Src/protocol_praser.obj
+
+# target to build an object file
+Core/Src/protocol_praser.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/3D_Printer.dir/build.make CMakeFiles/3D_Printer.dir/Core/Src/protocol_praser.c.obj
+.PHONY : Core/Src/protocol_praser.c.obj
+
+Core/Src/protocol_praser.i: Core/Src/protocol_praser.c.i
+.PHONY : Core/Src/protocol_praser.i
+
+# target to preprocess a source file
+Core/Src/protocol_praser.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/3D_Printer.dir/build.make CMakeFiles/3D_Printer.dir/Core/Src/protocol_praser.c.i
+.PHONY : Core/Src/protocol_praser.c.i
+
+Core/Src/protocol_praser.s: Core/Src/protocol_praser.c.s
+.PHONY : Core/Src/protocol_praser.s
+
+# target to generate assembly for a file
+Core/Src/protocol_praser.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/3D_Printer.dir/build.make CMakeFiles/3D_Printer.dir/Core/Src/protocol_praser.c.s
+.PHONY : Core/Src/protocol_praser.c.s
+
+Core/Src/remote_state.obj: Core/Src/remote_state.c.obj
+.PHONY : Core/Src/remote_state.obj
+
+# target to build an object file
+Core/Src/remote_state.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/3D_Printer.dir/build.make CMakeFiles/3D_Printer.dir/Core/Src/remote_state.c.obj
+.PHONY : Core/Src/remote_state.c.obj
+
+Core/Src/remote_state.i: Core/Src/remote_state.c.i
+.PHONY : Core/Src/remote_state.i
+
+# target to preprocess a source file
+Core/Src/remote_state.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/3D_Printer.dir/build.make CMakeFiles/3D_Printer.dir/Core/Src/remote_state.c.i
+.PHONY : Core/Src/remote_state.c.i
+
+Core/Src/remote_state.s: Core/Src/remote_state.c.s
+.PHONY : Core/Src/remote_state.s
+
+# target to generate assembly for a file
+Core/Src/remote_state.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/3D_Printer.dir/build.make CMakeFiles/3D_Printer.dir/Core/Src/remote_state.c.s
+.PHONY : Core/Src/remote_state.c.s
+
 Core/Src/stepper_motor.obj: Core/Src/stepper_motor.c.obj
 .PHONY : Core/Src/stepper_motor.obj
 
@@ -570,6 +642,15 @@ help:
 	@echo "... Core/Src/main.obj"
 	@echo "... Core/Src/main.i"
 	@echo "... Core/Src/main.s"
+	@echo "... Core/Src/pid.obj"
+	@echo "... Core/Src/pid.i"
+	@echo "... Core/Src/pid.s"
+	@echo "... Core/Src/protocol_praser.obj"
+	@echo "... Core/Src/protocol_praser.i"
+	@echo "... Core/Src/protocol_praser.s"
+	@echo "... Core/Src/remote_state.obj"
+	@echo "... Core/Src/remote_state.i"
+	@echo "... Core/Src/remote_state.s"
 	@echo "... Core/Src/stepper_motor.obj"
 	@echo "... Core/Src/stepper_motor.i"
 	@echo "... Core/Src/stepper_motor.s"

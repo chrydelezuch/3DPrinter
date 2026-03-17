@@ -292,10 +292,24 @@ CMakeFiles/3D_Printer.dir/Core/Src/usb_praser.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/3D_Printer.dir/Core/Src/usb_praser.c.s"
 	C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.100.202509120712/tools/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:/Users/chde/Documents/3D_Printer/Core/Src/usb_praser.c -o CMakeFiles/3D_Printer.dir/Core/Src/usb_praser.c.s
 
+CMakeFiles/3D_Printer.dir/Core/Src/protocol_praser.c.obj: CMakeFiles/3D_Printer.dir/flags.make
+CMakeFiles/3D_Printer.dir/Core/Src/protocol_praser.c.obj: C:/Users/chde/Documents/3D_Printer/Core/Src/protocol_praser.c
+CMakeFiles/3D_Printer.dir/Core/Src/protocol_praser.c.obj: CMakeFiles/3D_Printer.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:/Users/chde/Documents/3D_Printer/config_default/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building C object CMakeFiles/3D_Printer.dir/Core/Src/protocol_praser.c.obj"
+	C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.100.202509120712/tools/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/3D_Printer.dir/Core/Src/protocol_praser.c.obj -MF CMakeFiles/3D_Printer.dir/Core/Src/protocol_praser.c.obj.d -o CMakeFiles/3D_Printer.dir/Core/Src/protocol_praser.c.obj -c C:/Users/chde/Documents/3D_Printer/Core/Src/protocol_praser.c
+
+CMakeFiles/3D_Printer.dir/Core/Src/protocol_praser.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/3D_Printer.dir/Core/Src/protocol_praser.c.i"
+	C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.100.202509120712/tools/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:/Users/chde/Documents/3D_Printer/Core/Src/protocol_praser.c > CMakeFiles/3D_Printer.dir/Core/Src/protocol_praser.c.i
+
+CMakeFiles/3D_Printer.dir/Core/Src/protocol_praser.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/3D_Printer.dir/Core/Src/protocol_praser.c.s"
+	C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.100.202509120712/tools/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:/Users/chde/Documents/3D_Printer/Core/Src/protocol_praser.c -o CMakeFiles/3D_Printer.dir/Core/Src/protocol_praser.c.s
+
 CMakeFiles/3D_Printer.dir/Core/Src/t_velocity.c.obj: CMakeFiles/3D_Printer.dir/flags.make
 CMakeFiles/3D_Printer.dir/Core/Src/t_velocity.c.obj: C:/Users/chde/Documents/3D_Printer/Core/Src/t_velocity.c
 CMakeFiles/3D_Printer.dir/Core/Src/t_velocity.c.obj: CMakeFiles/3D_Printer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:/Users/chde/Documents/3D_Printer/config_default/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building C object CMakeFiles/3D_Printer.dir/Core/Src/t_velocity.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:/Users/chde/Documents/3D_Printer/config_default/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building C object CMakeFiles/3D_Printer.dir/Core/Src/t_velocity.c.obj"
 	C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.100.202509120712/tools/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/3D_Printer.dir/Core/Src/t_velocity.c.obj -MF CMakeFiles/3D_Printer.dir/Core/Src/t_velocity.c.obj.d -o CMakeFiles/3D_Printer.dir/Core/Src/t_velocity.c.obj -c C:/Users/chde/Documents/3D_Printer/Core/Src/t_velocity.c
 
 CMakeFiles/3D_Printer.dir/Core/Src/t_velocity.c.i: cmake_force
@@ -305,6 +319,34 @@ CMakeFiles/3D_Printer.dir/Core/Src/t_velocity.c.i: cmake_force
 CMakeFiles/3D_Printer.dir/Core/Src/t_velocity.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/3D_Printer.dir/Core/Src/t_velocity.c.s"
 	C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.100.202509120712/tools/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:/Users/chde/Documents/3D_Printer/Core/Src/t_velocity.c -o CMakeFiles/3D_Printer.dir/Core/Src/t_velocity.c.s
+
+CMakeFiles/3D_Printer.dir/Core/Src/pid.c.obj: CMakeFiles/3D_Printer.dir/flags.make
+CMakeFiles/3D_Printer.dir/Core/Src/pid.c.obj: C:/Users/chde/Documents/3D_Printer/Core/Src/pid.c
+CMakeFiles/3D_Printer.dir/Core/Src/pid.c.obj: CMakeFiles/3D_Printer.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:/Users/chde/Documents/3D_Printer/config_default/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building C object CMakeFiles/3D_Printer.dir/Core/Src/pid.c.obj"
+	C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.100.202509120712/tools/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/3D_Printer.dir/Core/Src/pid.c.obj -MF CMakeFiles/3D_Printer.dir/Core/Src/pid.c.obj.d -o CMakeFiles/3D_Printer.dir/Core/Src/pid.c.obj -c C:/Users/chde/Documents/3D_Printer/Core/Src/pid.c
+
+CMakeFiles/3D_Printer.dir/Core/Src/pid.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/3D_Printer.dir/Core/Src/pid.c.i"
+	C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.100.202509120712/tools/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:/Users/chde/Documents/3D_Printer/Core/Src/pid.c > CMakeFiles/3D_Printer.dir/Core/Src/pid.c.i
+
+CMakeFiles/3D_Printer.dir/Core/Src/pid.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/3D_Printer.dir/Core/Src/pid.c.s"
+	C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.100.202509120712/tools/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:/Users/chde/Documents/3D_Printer/Core/Src/pid.c -o CMakeFiles/3D_Printer.dir/Core/Src/pid.c.s
+
+CMakeFiles/3D_Printer.dir/Core/Src/remote_state.c.obj: CMakeFiles/3D_Printer.dir/flags.make
+CMakeFiles/3D_Printer.dir/Core/Src/remote_state.c.obj: C:/Users/chde/Documents/3D_Printer/Core/Src/remote_state.c
+CMakeFiles/3D_Printer.dir/Core/Src/remote_state.c.obj: CMakeFiles/3D_Printer.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:/Users/chde/Documents/3D_Printer/config_default/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building C object CMakeFiles/3D_Printer.dir/Core/Src/remote_state.c.obj"
+	C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.100.202509120712/tools/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/3D_Printer.dir/Core/Src/remote_state.c.obj -MF CMakeFiles/3D_Printer.dir/Core/Src/remote_state.c.obj.d -o CMakeFiles/3D_Printer.dir/Core/Src/remote_state.c.obj -c C:/Users/chde/Documents/3D_Printer/Core/Src/remote_state.c
+
+CMakeFiles/3D_Printer.dir/Core/Src/remote_state.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/3D_Printer.dir/Core/Src/remote_state.c.i"
+	C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.100.202509120712/tools/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:/Users/chde/Documents/3D_Printer/Core/Src/remote_state.c > CMakeFiles/3D_Printer.dir/Core/Src/remote_state.c.i
+
+CMakeFiles/3D_Printer.dir/Core/Src/remote_state.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/3D_Printer.dir/Core/Src/remote_state.c.s"
+	C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.100.202509120712/tools/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:/Users/chde/Documents/3D_Printer/Core/Src/remote_state.c -o CMakeFiles/3D_Printer.dir/Core/Src/remote_state.c.s
 
 # Object files for target 3D_Printer
 3D_Printer_OBJECTS = \
@@ -324,7 +366,10 @@ CMakeFiles/3D_Printer.dir/Core/Src/t_velocity.c.s: cmake_force
 "CMakeFiles/3D_Printer.dir/Core/Src/system_check.c.obj" \
 "CMakeFiles/3D_Printer.dir/Core/Src/axis.c.obj" \
 "CMakeFiles/3D_Printer.dir/Core/Src/usb_praser.c.obj" \
-"CMakeFiles/3D_Printer.dir/Core/Src/t_velocity.c.obj"
+"CMakeFiles/3D_Printer.dir/Core/Src/protocol_praser.c.obj" \
+"CMakeFiles/3D_Printer.dir/Core/Src/t_velocity.c.obj" \
+"CMakeFiles/3D_Printer.dir/Core/Src/pid.c.obj" \
+"CMakeFiles/3D_Printer.dir/Core/Src/remote_state.c.obj"
 
 # External object files for target 3D_Printer
 3D_Printer_EXTERNAL_OBJECTS = \
@@ -345,6 +390,8 @@ CMakeFiles/3D_Printer.dir/Core/Src/t_velocity.c.s: cmake_force
 "C:/Users/chde/Documents/3D_Printer/config_default/cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj" \
 "C:/Users/chde/Documents/3D_Printer/config_default/cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj" \
 "C:/Users/chde/Documents/3D_Printer/config_default/cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c.obj" \
+"C:/Users/chde/Documents/3D_Printer/config_default/cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.c.obj" \
+"C:/Users/chde/Documents/3D_Printer/config_default/cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc_ex.c.obj" \
 "C:/Users/chde/Documents/3D_Printer/config_default/cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj" \
 "C:/Users/chde/Documents/3D_Printer/config_default/cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.obj" \
 "C:/Users/chde/Documents/3D_Printer/config_default/cmake/stm32cubemx/CMakeFiles/USB_Device_Library.dir/__/__/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.c.obj" \
@@ -368,7 +415,10 @@ CMakeFiles/3D_Printer.dir/Core/Src/t_velocity.c.s: cmake_force
 3D_Printer.elf: CMakeFiles/3D_Printer.dir/Core/Src/system_check.c.obj
 3D_Printer.elf: CMakeFiles/3D_Printer.dir/Core/Src/axis.c.obj
 3D_Printer.elf: CMakeFiles/3D_Printer.dir/Core/Src/usb_praser.c.obj
+3D_Printer.elf: CMakeFiles/3D_Printer.dir/Core/Src/protocol_praser.c.obj
 3D_Printer.elf: CMakeFiles/3D_Printer.dir/Core/Src/t_velocity.c.obj
+3D_Printer.elf: CMakeFiles/3D_Printer.dir/Core/Src/pid.c.obj
+3D_Printer.elf: CMakeFiles/3D_Printer.dir/Core/Src/remote_state.c.obj
 3D_Printer.elf: cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Core/Src/system_stm32f4xx.c.obj
 3D_Printer.elf: cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd.c.obj
 3D_Printer.elf: cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd_ex.c.obj
@@ -386,6 +436,8 @@ CMakeFiles/3D_Printer.dir/Core/Src/t_velocity.c.s: cmake_force
 3D_Printer.elf: cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj
 3D_Printer.elf: cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj
 3D_Printer.elf: cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c.obj
+3D_Printer.elf: cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.c.obj
+3D_Printer.elf: cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc_ex.c.obj
 3D_Printer.elf: cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj
 3D_Printer.elf: cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.obj
 3D_Printer.elf: cmake/stm32cubemx/CMakeFiles/USB_Device_Library.dir/__/__/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.c.obj
@@ -394,7 +446,7 @@ CMakeFiles/3D_Printer.dir/Core/Src/t_velocity.c.s: cmake_force
 3D_Printer.elf: cmake/stm32cubemx/CMakeFiles/USB_Device_Library.dir/__/__/Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c.obj
 3D_Printer.elf: CMakeFiles/3D_Printer.dir/build.make
 3D_Printer.elf: CMakeFiles/3D_Printer.dir/objects1.rsp
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:/Users/chde/Documents/3D_Printer/config_default/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Linking C executable 3D_Printer.elf"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:/Users/chde/Documents/3D_Printer/config_default/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Linking C executable 3D_Printer.elf"
 	C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.100.202509120712/tools/bin/arm-none-eabi-gcc.exe  -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard  -Wall -fdata-sections -ffunction-sections -O0 -g3 -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard  -T "C:/Users/chde/Documents/3D_Printer/STM32F401XX_FLASH.ld" --specs=nano.specs -Wl,-Map=3D_Printer.map -Wl,--gc-sections -Wl,--print-memory-usage @CMakeFiles/3D_Printer.dir/objects1.rsp -o 3D_Printer.elf  -lm 
 
 # Rule to build all files generated by this target.

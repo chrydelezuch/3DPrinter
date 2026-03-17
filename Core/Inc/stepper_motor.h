@@ -1,7 +1,8 @@
 #ifndef STEPPER_MOTOR_H
 #define STEPPER_MOTOR_H
 
-#include "main.h"
+#include <stdint.h>
+#include "stm32f4xx_hal.h"
 #include "t_velocity.h"
 
 typedef struct {

@@ -28,6 +28,9 @@ cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Core/Src/system_stm32f4xx.c
  C:/Users/chde/Documents/3D_Printer/cmake/stm32cubemx/../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h \
  C:/Users/chde/Documents/3D_Printer/cmake/stm32cubemx/../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h \
  C:/Users/chde/Documents/3D_Printer/cmake/stm32cubemx/../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h \
+ C:/Users/chde/Documents/3D_Printer/cmake/stm32cubemx/../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_adc.h \
+ C:/Users/chde/Documents/3D_Printer/cmake/stm32cubemx/../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_adc.h \
+ C:/Users/chde/Documents/3D_Printer/cmake/stm32cubemx/../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_adc_ex.h \
  C:/Users/chde/Documents/3D_Printer/cmake/stm32cubemx/../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h \
  C:/Users/chde/Documents/3D_Printer/cmake/stm32cubemx/../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h \
  C:/Users/chde/Documents/3D_Printer/cmake/stm32cubemx/../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h \

@@ -21,6 +21,8 @@ cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Core/Src/system_stm32f4xx.c
   C:/Users/chde/Documents/3D_Printer/Drivers/CMSIS/Include/mpu_armv7.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
+  C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_adc.h \
+  C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_adc_ex.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h \
@@ -39,6 +41,7 @@ cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Core/Src/system_stm32f4xx.c
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
+  C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_adc.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_usb.h
 
 cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj: C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c \
@@ -61,6 +64,8 @@ cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Drive
   C:/Users/chde/Documents/3D_Printer/Drivers/CMSIS/Include/mpu_armv7.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
+  C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_adc.h \
+  C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_adc_ex.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h \
@@ -79,6 +84,93 @@ cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Drive
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
+  C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_adc.h \
+  C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_usb.h
+
+cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.c.obj: C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.c \
+  C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.100.202509120712/tools/arm-none-eabi/include/_newlib_version.h \
+  C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.100.202509120712/tools/arm-none-eabi/include/machine/_default_types.h \
+  C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.100.202509120712/tools/arm-none-eabi/include/stdint.h \
+  C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.100.202509120712/tools/arm-none-eabi/include/sys/_intsup.h \
+  C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.100.202509120712/tools/arm-none-eabi/include/sys/_stdint.h \
+  C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.100.202509120712/tools/arm-none-eabi/include/sys/features.h \
+  C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.100.202509120712/tools/lib/gcc/arm-none-eabi/13.3.1/include/stddef.h \
+  C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.100.202509120712/tools/lib/gcc/arm-none-eabi/13.3.1/include/stdint.h \
+  C:/Users/chde/Documents/3D_Printer/Core/Inc/stm32f4xx_hal_conf.h \
+  C:/Users/chde/Documents/3D_Printer/Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f401xc.h \
+  C:/Users/chde/Documents/3D_Printer/Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h \
+  C:/Users/chde/Documents/3D_Printer/Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h \
+  C:/Users/chde/Documents/3D_Printer/Drivers/CMSIS/Include/cmsis_compiler.h \
+  C:/Users/chde/Documents/3D_Printer/Drivers/CMSIS/Include/cmsis_gcc.h \
+  C:/Users/chde/Documents/3D_Printer/Drivers/CMSIS/Include/cmsis_version.h \
+  C:/Users/chde/Documents/3D_Printer/Drivers/CMSIS/Include/core_cm4.h \
+  C:/Users/chde/Documents/3D_Printer/Drivers/CMSIS/Include/mpu_armv7.h \
+  C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h \
+  C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
+  C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_adc.h \
+  C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_adc_ex.h \
+  C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h \
+  C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h \
+  C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h \
+  C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h \
+  C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h \
+  C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h \
+  C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h \
+  C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h \
+  C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h \
+  C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h \
+  C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd.h \
+  C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd_ex.h \
+  C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h \
+  C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h \
+  C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h \
+  C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h \
+  C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
+  C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
+  C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_adc.h \
+  C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_usb.h
+
+cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc_ex.c.obj: C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc_ex.c \
+  C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.100.202509120712/tools/arm-none-eabi/include/_newlib_version.h \
+  C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.100.202509120712/tools/arm-none-eabi/include/machine/_default_types.h \
+  C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.100.202509120712/tools/arm-none-eabi/include/stdint.h \
+  C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.100.202509120712/tools/arm-none-eabi/include/sys/_intsup.h \
+  C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.100.202509120712/tools/arm-none-eabi/include/sys/_stdint.h \
+  C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.100.202509120712/tools/arm-none-eabi/include/sys/features.h \
+  C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.100.202509120712/tools/lib/gcc/arm-none-eabi/13.3.1/include/stddef.h \
+  C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.100.202509120712/tools/lib/gcc/arm-none-eabi/13.3.1/include/stdint.h \
+  C:/Users/chde/Documents/3D_Printer/Core/Inc/stm32f4xx_hal_conf.h \
+  C:/Users/chde/Documents/3D_Printer/Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f401xc.h \
+  C:/Users/chde/Documents/3D_Printer/Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h \
+  C:/Users/chde/Documents/3D_Printer/Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h \
+  C:/Users/chde/Documents/3D_Printer/Drivers/CMSIS/Include/cmsis_compiler.h \
+  C:/Users/chde/Documents/3D_Printer/Drivers/CMSIS/Include/cmsis_gcc.h \
+  C:/Users/chde/Documents/3D_Printer/Drivers/CMSIS/Include/cmsis_version.h \
+  C:/Users/chde/Documents/3D_Printer/Drivers/CMSIS/Include/core_cm4.h \
+  C:/Users/chde/Documents/3D_Printer/Drivers/CMSIS/Include/mpu_armv7.h \
+  C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h \
+  C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
+  C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_adc.h \
+  C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_adc_ex.h \
+  C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h \
+  C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h \
+  C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h \
+  C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h \
+  C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h \
+  C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h \
+  C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h \
+  C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h \
+  C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h \
+  C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h \
+  C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd.h \
+  C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd_ex.h \
+  C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h \
+  C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h \
+  C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h \
+  C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h \
+  C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
+  C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
+  C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_adc.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_usb.h
 
 cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj: C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c \
@@ -101,6 +193,8 @@ cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Drive
   C:/Users/chde/Documents/3D_Printer/Drivers/CMSIS/Include/mpu_armv7.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
+  C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_adc.h \
+  C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_adc_ex.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h \
@@ -119,6 +213,7 @@ cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Drive
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
+  C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_adc.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_usb.h
 
 cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj: C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c \
@@ -141,6 +236,8 @@ cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Drive
   C:/Users/chde/Documents/3D_Printer/Drivers/CMSIS/Include/mpu_armv7.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
+  C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_adc.h \
+  C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_adc_ex.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h \
@@ -159,6 +256,7 @@ cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Drive
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
+  C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_adc.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_usb.h
 
 cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c.obj: C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c \
@@ -181,6 +279,8 @@ cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Drive
   C:/Users/chde/Documents/3D_Printer/Drivers/CMSIS/Include/mpu_armv7.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
+  C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_adc.h \
+  C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_adc_ex.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h \
@@ -199,6 +299,7 @@ cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Drive
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
+  C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_adc.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_usb.h
 
 cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c.obj: C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c \
@@ -221,6 +322,8 @@ cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Drive
   C:/Users/chde/Documents/3D_Printer/Drivers/CMSIS/Include/mpu_armv7.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
+  C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_adc.h \
+  C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_adc_ex.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h \
@@ -239,6 +342,7 @@ cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Drive
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
+  C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_adc.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_usb.h
 
 cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c.obj: C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c \
@@ -261,6 +365,8 @@ cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Drive
   C:/Users/chde/Documents/3D_Printer/Drivers/CMSIS/Include/mpu_armv7.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
+  C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_adc.h \
+  C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_adc_ex.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h \
@@ -279,6 +385,7 @@ cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Drive
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
+  C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_adc.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_usb.h
 
 cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c.obj: C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c \
@@ -301,6 +408,8 @@ cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Drive
   C:/Users/chde/Documents/3D_Printer/Drivers/CMSIS/Include/mpu_armv7.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
+  C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_adc.h \
+  C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_adc_ex.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h \
@@ -319,6 +428,7 @@ cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Drive
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
+  C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_adc.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_usb.h
 
 cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c.obj: C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c \
@@ -341,6 +451,8 @@ cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Drive
   C:/Users/chde/Documents/3D_Printer/Drivers/CMSIS/Include/mpu_armv7.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
+  C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_adc.h \
+  C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_adc_ex.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h \
@@ -359,6 +471,7 @@ cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Drive
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
+  C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_adc.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_usb.h
 
 cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.obj: C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c \
@@ -381,6 +494,8 @@ cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Drive
   C:/Users/chde/Documents/3D_Printer/Drivers/CMSIS/Include/mpu_armv7.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
+  C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_adc.h \
+  C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_adc_ex.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h \
@@ -399,6 +514,7 @@ cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Drive
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
+  C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_adc.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_usb.h
 
 cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd.c.obj: C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd.c \
@@ -421,6 +537,8 @@ cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Drive
   C:/Users/chde/Documents/3D_Printer/Drivers/CMSIS/Include/mpu_armv7.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
+  C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_adc.h \
+  C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_adc_ex.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h \
@@ -439,6 +557,7 @@ cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Drive
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
+  C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_adc.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_usb.h
 
 cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd_ex.c.obj: C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd_ex.c \
@@ -461,6 +580,8 @@ cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Drive
   C:/Users/chde/Documents/3D_Printer/Drivers/CMSIS/Include/mpu_armv7.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
+  C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_adc.h \
+  C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_adc_ex.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h \
@@ -479,6 +600,7 @@ cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Drive
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
+  C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_adc.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_usb.h
 
 cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c.obj: C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c \
@@ -501,6 +623,8 @@ cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Drive
   C:/Users/chde/Documents/3D_Printer/Drivers/CMSIS/Include/mpu_armv7.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
+  C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_adc.h \
+  C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_adc_ex.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h \
@@ -519,6 +643,7 @@ cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Drive
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
+  C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_adc.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_usb.h
 
 cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c.obj: C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c \
@@ -541,6 +666,8 @@ cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Drive
   C:/Users/chde/Documents/3D_Printer/Drivers/CMSIS/Include/mpu_armv7.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
+  C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_adc.h \
+  C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_adc_ex.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h \
@@ -559,6 +686,7 @@ cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Drive
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
+  C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_adc.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_usb.h
 
 cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj: C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c \
@@ -581,6 +709,8 @@ cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Drive
   C:/Users/chde/Documents/3D_Printer/Drivers/CMSIS/Include/mpu_armv7.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
+  C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_adc.h \
+  C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_adc_ex.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h \
@@ -599,6 +729,7 @@ cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Drive
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
+  C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_adc.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_usb.h
 
 cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c.obj: C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c \
@@ -621,6 +752,8 @@ cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Drive
   C:/Users/chde/Documents/3D_Printer/Drivers/CMSIS/Include/mpu_armv7.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
+  C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_adc.h \
+  C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_adc_ex.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h \
@@ -639,6 +772,7 @@ cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Drive
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
+  C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_adc.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_usb.h
 
 cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj: C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c \
@@ -661,6 +795,8 @@ cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Drive
   C:/Users/chde/Documents/3D_Printer/Drivers/CMSIS/Include/mpu_armv7.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
+  C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_adc.h \
+  C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_adc_ex.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h \
@@ -679,6 +815,7 @@ cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Drive
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
+  C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_adc.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_usb.h
 
 cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.obj: C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c \
@@ -701,6 +838,8 @@ cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Drive
   C:/Users/chde/Documents/3D_Printer/Drivers/CMSIS/Include/mpu_armv7.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
+  C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_adc.h \
+  C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_adc_ex.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h \
@@ -719,6 +858,7 @@ cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Drive
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
+  C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_adc.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_usb.h
 
 cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_usb.c.obj: C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_usb.c \
@@ -741,6 +881,8 @@ cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Drive
   C:/Users/chde/Documents/3D_Printer/Drivers/CMSIS/Include/mpu_armv7.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
+  C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_adc.h \
+  C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_adc_ex.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h \
@@ -759,6 +901,7 @@ cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Drive
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
+  C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_adc.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_usb.h
 
 
@@ -790,6 +933,8 @@ C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.external
 
 C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.100.202509120712/tools/arm-none-eabi/include/sys/features.h:
 
+C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_adc.h:
+
 C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.100.202509120712/tools/lib/gcc/arm-none-eabi/13.3.1/include/stddef.h:
 
 C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd_ex.h:
@@ -797,6 +942,8 @@ C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ha
 C:/Users/chde/Documents/3D_Printer/Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f401xc.h:
 
 C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.100.202509120712/tools/lib/gcc/arm-none-eabi/13.3.1/include/stdint.h:
+
+C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc_ex.c:
 
 C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h:
 
@@ -825,6 +972,12 @@ C:/Users/chde/Documents/3D_Printer/Drivers/CMSIS/Include/mpu_armv7.h:
 C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h:
 
 C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:
+
+C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_adc.h:
+
+C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c:
+
+C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_adc_ex.h:
 
 C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h:
 
@@ -858,6 +1011,8 @@ C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll
 
 C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c:
 
+C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.c:
+
 C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c:
 
 C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c:
@@ -865,8 +1020,6 @@ C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ha
 C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c:
 
 C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c:
-
-C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c:
 
 C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c:
 

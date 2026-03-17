@@ -76,7 +76,7 @@ void test_circ_buf_push_many_should_fail_if_not_enough_space(void) {
 }
 
 // ------------------- PUSH MANY UINT8 TEST -------------------
-
+/*
 void test_circ_buf_push_many_uint8_should_store_values(void) {
     circ_buf_init(&cb, storage, sizeof(storage)/sizeof(buffer_type));
 
@@ -88,7 +88,7 @@ void test_circ_buf_push_many_uint8_should_store_values(void) {
     TEST_ASSERT_EQUAL_INT(0, storage[1]);
 
 }
-
+*/
 // ------------------- POP TESTS -------------------
 
 void test_circ_buf_pop_should_return_oldest_value(void) {

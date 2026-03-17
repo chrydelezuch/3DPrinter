@@ -1,14 +1,6 @@
 CMakeFiles/3D_Printer.dir/Core/Src/usb_praser.c.obj: \
  C:/Users/chde/Documents/3D_Printer/Core/Src/usb_praser.c \
  C:/Users/chde/Documents/3D_Printer/Core/Inc/usb_praser.h \
- C:/Users/chde/Documents/3D_Printer/Core/Inc/main.h \
- C:/Users/chde/Documents/3D_Printer/cmake/stm32cubemx/../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
- C:/Users/chde/Documents/3D_Printer/Core/Inc/stm32f4xx_hal_conf.h \
- C:/Users/chde/Documents/3D_Printer/cmake/stm32cubemx/../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h \
- C:/Users/chde/Documents/3D_Printer/cmake/stm32cubemx/../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h \
- C:/Users/chde/Documents/3D_Printer/cmake/stm32cubemx/../../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h \
- C:/Users/chde/Documents/3D_Printer/cmake/stm32cubemx/../../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f401xc.h \
- C:/Users/chde/Documents/3D_Printer/cmake/stm32cubemx/../../Drivers/CMSIS/Include/core_cm4.h \
  C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.100.202509120712/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/include/stdint.h \
  C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.100.202509120712/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/include/stdint.h \
  C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.100.202509120712/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/include/machine/_default_types.h \
@@ -16,6 +8,13 @@ CMakeFiles/3D_Printer.dir/Core/Src/usb_praser.c.obj: \
  C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.100.202509120712/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/include/_newlib_version.h \
  C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.100.202509120712/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/include/sys/_intsup.h \
  C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.100.202509120712/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/include/sys/_stdint.h \
+ C:/Users/chde/Documents/3D_Printer/cmake/stm32cubemx/../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
+ C:/Users/chde/Documents/3D_Printer/Core/Inc/stm32f4xx_hal_conf.h \
+ C:/Users/chde/Documents/3D_Printer/cmake/stm32cubemx/../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h \
+ C:/Users/chde/Documents/3D_Printer/cmake/stm32cubemx/../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h \
+ C:/Users/chde/Documents/3D_Printer/cmake/stm32cubemx/../../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h \
+ C:/Users/chde/Documents/3D_Printer/cmake/stm32cubemx/../../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f401xc.h \
+ C:/Users/chde/Documents/3D_Printer/cmake/stm32cubemx/../../Drivers/CMSIS/Include/core_cm4.h \
  C:/Users/chde/Documents/3D_Printer/cmake/stm32cubemx/../../Drivers/CMSIS/Include/cmsis_version.h \
  C:/Users/chde/Documents/3D_Printer/cmake/stm32cubemx/../../Drivers/CMSIS/Include/cmsis_compiler.h \
  C:/Users/chde/Documents/3D_Printer/cmake/stm32cubemx/../../Drivers/CMSIS/Include/cmsis_gcc.h \
@@ -30,6 +29,9 @@ CMakeFiles/3D_Printer.dir/Core/Src/usb_praser.c.obj: \
  C:/Users/chde/Documents/3D_Printer/cmake/stm32cubemx/../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h \
  C:/Users/chde/Documents/3D_Printer/cmake/stm32cubemx/../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h \
  C:/Users/chde/Documents/3D_Printer/cmake/stm32cubemx/../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h \
+ C:/Users/chde/Documents/3D_Printer/cmake/stm32cubemx/../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_adc.h \
+ C:/Users/chde/Documents/3D_Printer/cmake/stm32cubemx/../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_adc.h \
+ C:/Users/chde/Documents/3D_Printer/cmake/stm32cubemx/../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_adc_ex.h \
  C:/Users/chde/Documents/3D_Printer/cmake/stm32cubemx/../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h \
  C:/Users/chde/Documents/3D_Printer/cmake/stm32cubemx/../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h \
  C:/Users/chde/Documents/3D_Printer/cmake/stm32cubemx/../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h \
@@ -43,5 +45,21 @@ CMakeFiles/3D_Printer.dir/Core/Src/usb_praser.c.obj: \
  C:/Users/chde/Documents/3D_Printer/Core/Inc/circular_buffer.h \
  C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.100.202509120712/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/include/stdbool.h \
  C:/Users/chde/Documents/3D_Printer/Core/Inc/t_velocity.h \
+ C:/Users/chde/Documents/3D_Printer/Core/Inc/main.h \
+ C:/Users/chde/Documents/3D_Printer/Core/Inc/pid.h \
+ C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.100.202509120712/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/include/string.h \
+ C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.100.202509120712/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/include/_ansi.h \
+ C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.100.202509120712/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/include/newlib.h \
+ C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.100.202509120712/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/include/sys/config.h \
+ C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.100.202509120712/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/include/machine/ieeefp.h \
+ C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.100.202509120712/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/include/sys/reent.h \
+ C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.100.202509120712/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/include/_ansi.h \
+ C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.100.202509120712/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/include/sys/cdefs.h \
+ C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.100.202509120712/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/include/sys/_types.h \
+ C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.100.202509120712/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/include/machine/_types.h \
+ C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.100.202509120712/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/include/sys/lock.h \
+ C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.100.202509120712/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/include/sys/_locale.h \
+ C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.100.202509120712/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/include/strings.h \
+ C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.100.202509120712/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/include/sys/string.h \
  C:/Users/chde/Documents/3D_Printer/Core/Inc/axis.h \
  C:/Users/chde/Documents/3D_Printer/Core/Inc/stepper_motor.h

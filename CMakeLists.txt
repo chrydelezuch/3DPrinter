@@ -51,7 +51,10 @@ target_sources(${CMAKE_PROJECT_NAME} PRIVATE
     Core/Src/system_check.c
     Core/Src/axis.c
     Core/Src/usb_praser.c
+    Core/Src/protocol_praser.c
     Core/Src/t_velocity.c
+    Core/Src/pid.c
+    Core/Src/remote_state.c
 )
 
 # Add include paths

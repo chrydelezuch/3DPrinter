@@ -21,11 +21,10 @@
 /* Includes ------------------------------------------------------------------*/
 #include "usbd_cdc_if.h"
 
-
 /* USER CODE BEGIN INCLUDE */
-#include "../../Core/Inc/usb_praser.h";
-#include "../../Core/Inc/circular_buffer.h";
-#include "../../Core/Inc/axis.h";
+#include "../../Core/Inc/usb_praser.h"
+#include "../../Core/Inc/circular_buffer.h"
+#include "../../Core/Inc/axis.h"
 /* USER CODE END INCLUDE */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -263,7 +262,6 @@ static int8_t CDC_Control_FS(uint8_t cmd, uint8_t* pbuf, uint16_t length)
   */
 static int8_t CDC_Receive_FS(uint8_t* Buf, uint32_t *Len)
 {
-
   /* USER CODE BEGIN 6 */
 
   circ_buf_push_many_uint8(axis_map[0].motor, Buf, *Len);

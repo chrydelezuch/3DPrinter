@@ -27,13 +27,11 @@ cmake/stm32cubemx/CMakeFiles/USB_Device_Library.dir/__/__/Middlewares/ST/STM32_U
   C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.100.202509120712/tools/arm-none-eabi/include/sys/stdio.h \
   C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.100.202509120712/tools/arm-none-eabi/include/sys/string.h \
   C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.100.202509120712/tools/lib/gcc/arm-none-eabi/13.3.1/include/stdarg.h \
-  C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.100.202509120712/tools/lib/gcc/arm-none-eabi/13.3.1/include/stdbool.h \
   C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.100.202509120712/tools/lib/gcc/arm-none-eabi/13.3.1/include/stddef.h \
   C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.100.202509120712/tools/lib/gcc/arm-none-eabi/13.3.1/include/stdint.h \
-  C:/Users/chde/Documents/3D_Printer/Core/Inc/circular_buffer.h \
   C:/Users/chde/Documents/3D_Printer/Core/Inc/main.h \
+  C:/Users/chde/Documents/3D_Printer/Core/Inc/pid.h \
   C:/Users/chde/Documents/3D_Printer/Core/Inc/stm32f4xx_hal_conf.h \
-  C:/Users/chde/Documents/3D_Printer/Core/Inc/t_velocity.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f401xc.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h \
@@ -44,6 +42,8 @@ cmake/stm32cubemx/CMakeFiles/USB_Device_Library.dir/__/__/Middlewares/ST/STM32_U
   C:/Users/chde/Documents/3D_Printer/Drivers/CMSIS/Include/mpu_armv7.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
+  C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_adc.h \
+  C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_adc_ex.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h \
@@ -62,6 +62,7 @@ cmake/stm32cubemx/CMakeFiles/USB_Device_Library.dir/__/__/Middlewares/ST/STM32_U
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
+  C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_adc.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_usb.h \
   C:/Users/chde/Documents/3D_Printer/Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc/usbd_cdc.h \
   C:/Users/chde/Documents/3D_Printer/Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_core.h \
@@ -96,13 +97,11 @@ cmake/stm32cubemx/CMakeFiles/USB_Device_Library.dir/__/__/Middlewares/ST/STM32_U
   C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.100.202509120712/tools/arm-none-eabi/include/sys/stdio.h \
   C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.100.202509120712/tools/arm-none-eabi/include/sys/string.h \
   C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.100.202509120712/tools/lib/gcc/arm-none-eabi/13.3.1/include/stdarg.h \
-  C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.100.202509120712/tools/lib/gcc/arm-none-eabi/13.3.1/include/stdbool.h \
   C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.100.202509120712/tools/lib/gcc/arm-none-eabi/13.3.1/include/stddef.h \
   C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.100.202509120712/tools/lib/gcc/arm-none-eabi/13.3.1/include/stdint.h \
-  C:/Users/chde/Documents/3D_Printer/Core/Inc/circular_buffer.h \
   C:/Users/chde/Documents/3D_Printer/Core/Inc/main.h \
+  C:/Users/chde/Documents/3D_Printer/Core/Inc/pid.h \
   C:/Users/chde/Documents/3D_Printer/Core/Inc/stm32f4xx_hal_conf.h \
-  C:/Users/chde/Documents/3D_Printer/Core/Inc/t_velocity.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f401xc.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h \
@@ -113,6 +112,8 @@ cmake/stm32cubemx/CMakeFiles/USB_Device_Library.dir/__/__/Middlewares/ST/STM32_U
   C:/Users/chde/Documents/3D_Printer/Drivers/CMSIS/Include/mpu_armv7.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
+  C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_adc.h \
+  C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_adc_ex.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h \
@@ -131,6 +132,7 @@ cmake/stm32cubemx/CMakeFiles/USB_Device_Library.dir/__/__/Middlewares/ST/STM32_U
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
+  C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_adc.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_usb.h \
   C:/Users/chde/Documents/3D_Printer/Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_core.h \
   C:/Users/chde/Documents/3D_Printer/Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ctlreq.h \
@@ -164,13 +166,11 @@ cmake/stm32cubemx/CMakeFiles/USB_Device_Library.dir/__/__/Middlewares/ST/STM32_U
   C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.100.202509120712/tools/arm-none-eabi/include/sys/stdio.h \
   C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.100.202509120712/tools/arm-none-eabi/include/sys/string.h \
   C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.100.202509120712/tools/lib/gcc/arm-none-eabi/13.3.1/include/stdarg.h \
-  C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.100.202509120712/tools/lib/gcc/arm-none-eabi/13.3.1/include/stdbool.h \
   C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.100.202509120712/tools/lib/gcc/arm-none-eabi/13.3.1/include/stddef.h \
   C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.100.202509120712/tools/lib/gcc/arm-none-eabi/13.3.1/include/stdint.h \
-  C:/Users/chde/Documents/3D_Printer/Core/Inc/circular_buffer.h \
   C:/Users/chde/Documents/3D_Printer/Core/Inc/main.h \
+  C:/Users/chde/Documents/3D_Printer/Core/Inc/pid.h \
   C:/Users/chde/Documents/3D_Printer/Core/Inc/stm32f4xx_hal_conf.h \
-  C:/Users/chde/Documents/3D_Printer/Core/Inc/t_velocity.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f401xc.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h \
@@ -181,6 +181,8 @@ cmake/stm32cubemx/CMakeFiles/USB_Device_Library.dir/__/__/Middlewares/ST/STM32_U
   C:/Users/chde/Documents/3D_Printer/Drivers/CMSIS/Include/mpu_armv7.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
+  C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_adc.h \
+  C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_adc_ex.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h \
@@ -199,6 +201,7 @@ cmake/stm32cubemx/CMakeFiles/USB_Device_Library.dir/__/__/Middlewares/ST/STM32_U
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
+  C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_adc.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_usb.h \
   C:/Users/chde/Documents/3D_Printer/Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_core.h \
   C:/Users/chde/Documents/3D_Printer/Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ctlreq.h \
@@ -232,13 +235,11 @@ cmake/stm32cubemx/CMakeFiles/USB_Device_Library.dir/__/__/Middlewares/ST/STM32_U
   C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.100.202509120712/tools/arm-none-eabi/include/sys/stdio.h \
   C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.100.202509120712/tools/arm-none-eabi/include/sys/string.h \
   C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.100.202509120712/tools/lib/gcc/arm-none-eabi/13.3.1/include/stdarg.h \
-  C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.100.202509120712/tools/lib/gcc/arm-none-eabi/13.3.1/include/stdbool.h \
   C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.100.202509120712/tools/lib/gcc/arm-none-eabi/13.3.1/include/stddef.h \
   C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.100.202509120712/tools/lib/gcc/arm-none-eabi/13.3.1/include/stdint.h \
-  C:/Users/chde/Documents/3D_Printer/Core/Inc/circular_buffer.h \
   C:/Users/chde/Documents/3D_Printer/Core/Inc/main.h \
+  C:/Users/chde/Documents/3D_Printer/Core/Inc/pid.h \
   C:/Users/chde/Documents/3D_Printer/Core/Inc/stm32f4xx_hal_conf.h \
-  C:/Users/chde/Documents/3D_Printer/Core/Inc/t_velocity.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f401xc.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h \
@@ -249,6 +250,8 @@ cmake/stm32cubemx/CMakeFiles/USB_Device_Library.dir/__/__/Middlewares/ST/STM32_U
   C:/Users/chde/Documents/3D_Printer/Drivers/CMSIS/Include/mpu_armv7.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
+  C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_adc.h \
+  C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_adc_ex.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h \
@@ -267,6 +270,7 @@ cmake/stm32cubemx/CMakeFiles/USB_Device_Library.dir/__/__/Middlewares/ST/STM32_U
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
+  C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_adc.h \
   C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_usb.h \
   C:/Users/chde/Documents/3D_Printer/Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_core.h \
   C:/Users/chde/Documents/3D_Printer/Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ctlreq.h \
@@ -299,6 +303,8 @@ C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ha
 
 C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.100.202509120712/tools/arm-none-eabi/include/stdint.h:
 
+C:/Users/chde/Documents/3D_Printer/Core/Inc/pid.h:
+
 C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.100.202509120712/tools/arm-none-eabi/include/machine/stdlib.h:
 
 C:/Users/chde/Documents/3D_Printer/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.c:
@@ -309,11 +315,11 @@ C:/Users/chde/Documents/3D_Printer/Drivers/CMSIS/Include/cmsis_version.h:
 
 C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h:
 
-C:/Users/chde/Documents/3D_Printer/Core/Inc/circular_buffer.h:
-
 C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.100.202509120712/tools/arm-none-eabi/include/stdio.h:
 
 C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.100.202509120712/tools/arm-none-eabi/include/stdlib.h:
+
+C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_adc.h:
 
 C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.100.202509120712/tools/arm-none-eabi/include/strings.h:
 
@@ -361,7 +367,7 @@ C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.external
 
 C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.100.202509120712/tools/arm-none-eabi/include/sys/stdio.h:
 
-C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.100.202509120712/tools/lib/gcc/arm-none-eabi/13.3.1/include/stdbool.h:
+C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_adc.h:
 
 C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.100.202509120712/tools/lib/gcc/arm-none-eabi/13.3.1/include/stddef.h:
 
@@ -370,8 +376,6 @@ C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ha
 C:/Users/chde/Documents/3D_Printer/Drivers/CMSIS/Include/cmsis_gcc.h:
 
 C:/Users/chde/Documents/3D_Printer/Core/Inc/main.h:
-
-C:/Users/chde/Documents/3D_Printer/Core/Inc/t_velocity.h:
 
 C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h:
 
@@ -386,6 +390,8 @@ C:/Users/chde/Documents/3D_Printer/Drivers/CMSIS/Include/cmsis_compiler.h:
 C:/Users/chde/Documents/3D_Printer/Drivers/CMSIS/Include/mpu_armv7.h:
 
 C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:
+
+C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_adc_ex.h:
 
 C:/Users/chde/Documents/3D_Printer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h:
 

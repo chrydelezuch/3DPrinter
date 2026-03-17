@@ -192,6 +192,54 @@ __/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.s:
 	cd C:/Users/chde/Documents/3D_Printer/config_default && $(MAKE) $(MAKESILENT) -f cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/build.make cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.s
 .PHONY : __/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.s
 
+__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.obj: __/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.c.obj
+.PHONY : __/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.obj
+
+# target to build an object file
+__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.c.obj:
+	cd C:/Users/chde/Documents/3D_Printer/config_default && $(MAKE) $(MAKESILENT) -f cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/build.make cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.c.obj
+.PHONY : __/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.c.obj
+
+__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.i: __/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.c.i
+.PHONY : __/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.i
+
+# target to preprocess a source file
+__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.c.i:
+	cd C:/Users/chde/Documents/3D_Printer/config_default && $(MAKE) $(MAKESILENT) -f cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/build.make cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.c.i
+.PHONY : __/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.c.i
+
+__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.s: __/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.c.s
+.PHONY : __/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.s
+
+# target to generate assembly for a file
+__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.c.s:
+	cd C:/Users/chde/Documents/3D_Printer/config_default && $(MAKE) $(MAKESILENT) -f cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/build.make cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.c.s
+.PHONY : __/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.c.s
+
+__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc_ex.obj: __/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc_ex.c.obj
+.PHONY : __/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc_ex.obj
+
+# target to build an object file
+__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc_ex.c.obj:
+	cd C:/Users/chde/Documents/3D_Printer/config_default && $(MAKE) $(MAKESILENT) -f cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/build.make cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc_ex.c.obj
+.PHONY : __/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc_ex.c.obj
+
+__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc_ex.i: __/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc_ex.c.i
+.PHONY : __/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc_ex.i
+
+# target to preprocess a source file
+__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc_ex.c.i:
+	cd C:/Users/chde/Documents/3D_Printer/config_default && $(MAKE) $(MAKESILENT) -f cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/build.make cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc_ex.c.i
+.PHONY : __/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc_ex.c.i
+
+__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc_ex.s: __/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc_ex.c.s
+.PHONY : __/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc_ex.s
+
+# target to generate assembly for a file
+__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc_ex.c.s:
+	cd C:/Users/chde/Documents/3D_Printer/config_default && $(MAKE) $(MAKESILENT) -f cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/build.make cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc_ex.c.s
+.PHONY : __/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc_ex.c.s
+
 __/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.obj: __/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj
 .PHONY : __/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.obj
 
@@ -712,6 +760,12 @@ help:
 	@echo "... __/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.obj"
 	@echo "... __/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.i"
 	@echo "... __/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.s"
+	@echo "... __/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.obj"
+	@echo "... __/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.i"
+	@echo "... __/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.s"
+	@echo "... __/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc_ex.obj"
+	@echo "... __/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc_ex.i"
+	@echo "... __/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc_ex.s"
 	@echo "... __/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.obj"
 	@echo "... __/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.i"
 	@echo "... __/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.s"

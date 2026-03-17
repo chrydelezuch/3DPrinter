@@ -28,6 +28,9 @@ CMakeFiles/3D_Printer.dir/USB_DEVICE/Target/usbd_conf.c.obj: \
  C:/Users/chde/Documents/3D_Printer/cmake/stm32cubemx/../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h \
  C:/Users/chde/Documents/3D_Printer/cmake/stm32cubemx/../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h \
  C:/Users/chde/Documents/3D_Printer/cmake/stm32cubemx/../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h \
+ C:/Users/chde/Documents/3D_Printer/cmake/stm32cubemx/../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_adc.h \
+ C:/Users/chde/Documents/3D_Printer/cmake/stm32cubemx/../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_adc.h \
+ C:/Users/chde/Documents/3D_Printer/cmake/stm32cubemx/../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_adc_ex.h \
  C:/Users/chde/Documents/3D_Printer/cmake/stm32cubemx/../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h \
  C:/Users/chde/Documents/3D_Printer/cmake/stm32cubemx/../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h \
  C:/Users/chde/Documents/3D_Printer/cmake/stm32cubemx/../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h \
@@ -61,10 +64,7 @@ CMakeFiles/3D_Printer.dir/USB_DEVICE/Target/usbd_conf.c.obj: \
  C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.100.202509120712/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/include/strings.h \
  C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.100.202509120712/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/include/sys/string.h \
  C:/Users/chde/Documents/3D_Printer/Core/Inc/main.h \
- C:/Users/chde/Documents/3D_Printer/Core/Inc/circular_buffer.h \
- C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.100.202509120712/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/include/stdbool.h \
- C:/Users/chde/Documents/3D_Printer/Core/Inc/t_velocity.h \
- C:/Users/chde/Documents/3D_Printer/Core/Inc/main.h \
+ C:/Users/chde/Documents/3D_Printer/Core/Inc/pid.h \
  C:/Users/chde/Documents/3D_Printer/cmake/stm32cubemx/../../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_core.h \
  C:/Users/chde/Documents/3D_Printer/cmake/stm32cubemx/../../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h \
  C:/Users/chde/Documents/3D_Printer/cmake/stm32cubemx/../../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h \

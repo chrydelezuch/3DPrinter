@@ -32,7 +32,7 @@ extern "C" {
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include <stdint.h>
-#include "circular_buffer.h"
+#include "pid.h"
 /* USER CODE END Includes */
 
 /* Exported types ------------------------------------------------------------*/
@@ -65,6 +65,10 @@ void HAL_TIM_MspPostInit(TIM_HandleTypeDef *htim);
 /* Private defines -----------------------------------------------------------*/
 #define EMERGENCY_RESET_Pin GPIO_PIN_13
 #define EMERGENCY_RESET_GPIO_Port GPIOC
+#define TEMP_SENSOR_BED_Pin GPIO_PIN_0
+#define TEMP_SENSOR_BED_GPIO_Port GPIOA
+#define TEMP_SENSOR_PRINT_HEAD_Pin GPIO_PIN_1
+#define TEMP_SENSOR_PRINT_HEAD_GPIO_Port GPIOA
 #define ADDITIONAL_INPUT_Pin GPIO_PIN_2
 #define ADDITIONAL_INPUT_GPIO_Port GPIOA
 #define ENDSTOP_Z_Pin GPIO_PIN_3
@@ -105,11 +109,16 @@ void HAL_TIM_MspPostInit(TIM_HandleTypeDef *htim);
 #define FAN_PRINTOUT_GPIO_Port GPIOB
 
 /* USER CODE BEGIN Private defines */
+
+#define HEADER_BUFFER_SIZE 512
+#define USB_BUFFER_SIZE 1024
+
 typedef enum
 {
     STATE_INIT = 0,
     STATE_RUN,
     STATE_STOP,
+	STATE_READY,
 	STATE_HOMING
 } SystemState_t;
 
@@ -122,6 +131,13 @@ typedef struct
 
 
 extern volatile SystemState_t currentState;
+
+extern TIM_HandleTypeDef htim3;
+extern TIM_HandleTypeDef htim4;
+
+extern PID_Controller pid_controller_bed;
+extern PID_Controller pid_controller_print_head;
+
 
 
 /* USER CODE END Private defines */
