@@ -1,0 +1,15 @@
+---
+:source:
+  :file: test/test_stepper_motor.c
+  :dirname: test
+  :basename: test_stepper_motor.c
+:successes: []
+:failures: []
+:ignores: []
+:counts:
+  :total: 0
+  :passed: 0
+  :failed: 0
+  :ignored: 0
+:stdout: []
+:time: 0.21302509999986796

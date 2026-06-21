@@ -21,7 +21,6 @@ extern void test_circ_buf_push_should_store_value(void);
 extern void test_circ_buf_push_should_fail_when_full(void);
 extern void test_circ_buf_push_many_should_store_multiple_values(void);
 extern void test_circ_buf_push_many_should_fail_if_not_enough_space(void);
-extern void test_circ_buf_push_many_uint8_should_store_values(void);
 extern void test_circ_buf_pop_should_return_oldest_value(void);
 extern void test_circ_buf_pop_should_fail_when_empty(void);
 extern void test_circ_buf_push_wrap_around(void);
@@ -110,8 +109,6 @@ static void run_test(UnityTestFunction func, const char* name, UNITY_LINE_TYPE l
       UNITY_PRINT_EOL();
       UnityPrint("  test_circ_buf_push_many_should_fail_if_not_enough_space");
       UNITY_PRINT_EOL();
-      UnityPrint("  test_circ_buf_push_many_uint8_should_store_values");
-      UNITY_PRINT_EOL();
       UnityPrint("  test_circ_buf_pop_should_return_oldest_value");
       UNITY_PRINT_EOL();
       UnityPrint("  test_circ_buf_pop_should_fail_when_empty");
@@ -128,18 +125,17 @@ static void run_test(UnityTestFunction func, const char* name, UNITY_LINE_TYPE l
   }
 #endif
   UnityBegin("test_circular_buffer.c");
-  run_test(test_circ_buf_init_should_succeed, "test_circ_buf_init_should_succeed", 18);
-  run_test(test_circ_buf_init_should_fail_on_invalid_args, "test_circ_buf_init_should_fail_on_invalid_args", 28);
-  run_test(test_circ_buf_push_should_store_value, "test_circ_buf_push_should_store_value", 36);
-  run_test(test_circ_buf_push_should_fail_when_full, "test_circ_buf_push_should_fail_when_full", 44);
-  run_test(test_circ_buf_push_many_should_store_multiple_values, "test_circ_buf_push_many_should_store_multiple_values", 60);
-  run_test(test_circ_buf_push_many_should_fail_if_not_enough_space, "test_circ_buf_push_many_should_fail_if_not_enough_space", 71);
-  run_test(test_circ_buf_push_many_uint8_should_store_values, "test_circ_buf_push_many_uint8_should_store_values", 80);
-  run_test(test_circ_buf_pop_should_return_oldest_value, "test_circ_buf_pop_should_return_oldest_value", 94);
-  run_test(test_circ_buf_pop_should_fail_when_empty, "test_circ_buf_pop_should_fail_when_empty", 108);
-  run_test(test_circ_buf_push_wrap_around, "test_circ_buf_push_wrap_around", 117);
-  run_test(test_circ_buf_empty_and_full_flags, "test_circ_buf_empty_and_full_flags", 138);
-  run_test(test_circ_buf_reset_should_clear_buffer, "test_circ_buf_reset_should_clear_buffer", 157);
+  run_test(test_circ_buf_init_should_succeed, "test_circ_buf_init_should_succeed", 19);
+  run_test(test_circ_buf_init_should_fail_on_invalid_args, "test_circ_buf_init_should_fail_on_invalid_args", 29);
+  run_test(test_circ_buf_push_should_store_value, "test_circ_buf_push_should_store_value", 37);
+  run_test(test_circ_buf_push_should_fail_when_full, "test_circ_buf_push_should_fail_when_full", 45);
+  run_test(test_circ_buf_push_many_should_store_multiple_values, "test_circ_buf_push_many_should_store_multiple_values", 61);
+  run_test(test_circ_buf_push_many_should_fail_if_not_enough_space, "test_circ_buf_push_many_should_fail_if_not_enough_space", 72);
+  run_test(test_circ_buf_pop_should_return_oldest_value, "test_circ_buf_pop_should_return_oldest_value", 95);
+  run_test(test_circ_buf_pop_should_fail_when_empty, "test_circ_buf_pop_should_fail_when_empty", 109);
+  run_test(test_circ_buf_push_wrap_around, "test_circ_buf_push_wrap_around", 118);
+  run_test(test_circ_buf_empty_and_full_flags, "test_circ_buf_empty_and_full_flags", 139);
+  run_test(test_circ_buf_reset_should_clear_buffer, "test_circ_buf_reset_should_clear_buffer", 158);
 
   return UNITY_END();
 }

@@ -4,8 +4,8 @@
 #include <stddef.h>
 #include <stdint.h>
 #include <stdbool.h>
-#include "t_velocity.h"
-#include "stm32f4xx_hal.h"
+//#include "t_velocity.h"
+//#include "stm32f4xx_hal.h"
 
 #include <string.h>
 
@@ -15,7 +15,7 @@
 
 
 typedef struct {
-    uint8_t * buffer;  /* pointer to buffer memory */
+    uint8_t * buffer;
     volatile int head;
     volatile int tail;
     int max_len;

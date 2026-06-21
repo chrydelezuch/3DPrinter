@@ -28,7 +28,7 @@ int circ_buf_push(cbuf_handle_t c, const void *data)
         next = 0;
 
     if (next == c->tail)
-        return -1; // pełny
+        return -1; // full
 
     memcpy(&c->buffer[c->head * c->elem_size], data, c->elem_size);
     c->head = next;
@@ -66,6 +66,8 @@ int circ_buf_push_many(cbuf_handle_t c, const void *data, size_t len)
     return 0;
 }
 
+
+/*
 int circ_buf_push_many_uint8(cbuf_handle_t c, uint8_t *data, size_t len)
 {
 
@@ -117,6 +119,60 @@ int circ_buf_push_many_uint8(cbuf_handle_t c, uint8_t *data, size_t len)
 
     return 0;
 }
+*/
+
+int circ_buf_push_many_uint8(cbuf_handle_t c, uint8_t *data, size_t len)
+{
+    int next;
+
+
+
+    if(c->leftover_size !=0){
+    	int size = c->elem_size - c->leftover_size;
+    	memcpy(c->leftover + c->leftover_size, data, size);
+    	data += size;
+    	len -= size;
+    	circ_buf_push(c, c->leftover);
+    	c->leftover_size = 0;
+    }
+
+    int leftover = len;
+    len /= c->elem_size;
+    leftover -= len * c->elem_size;
+
+
+
+    if (circ_buf_free_space(c) < (int)len)
+        return -1;
+
+    next = c->head + len;
+
+    if (next >= c->max_len) {
+        size_t first_part = c->max_len - c->head;
+
+        memcpy(&c->buffer[c->head],
+               data,
+               first_part * c->elem_size);
+
+        memcpy(&c->buffer[0],
+               data + first_part,
+               (len - first_part) * c->elem_size);
+
+        next -= c->max_len;
+    } else {
+        memcpy(&c->buffer[c->head],
+               data,
+               len * c->elem_size);
+    }
+
+    c->head = next;
+
+    memcpy(c->leftover + c->leftover_size, data + len * c->elem_size, leftover);
+    c->leftover_size +=leftover;
+
+    return 0;
+}
+
 
 int circ_buf_pop(cbuf_handle_t c, void *data)
 {

@@ -74,8 +74,8 @@ CMakeFiles/3D_Printer.dir/USB_DEVICE/App/usbd_cdc_if.c.obj: \
  C:/Users/chde/Documents/3D_Printer/USB_DEVICE/App/../../Core/Inc/usb_praser.h \
  C:/Users/chde/Documents/3D_Printer/USB_DEVICE/App/../../Core/Inc/circular_buffer.h \
  C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.100.202509120712/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/include/stdbool.h \
- C:/Users/chde/Documents/3D_Printer/USB_DEVICE/App/../../Core/Inc/t_velocity.h \
- C:/Users/chde/Documents/3D_Printer/USB_DEVICE/App/../../Core/Inc/main.h \
  C:/Users/chde/Documents/3D_Printer/USB_DEVICE/App/../../Core/Inc/circular_buffer.h \
  C:/Users/chde/Documents/3D_Printer/USB_DEVICE/App/../../Core/Inc/axis.h \
- C:/Users/chde/Documents/3D_Printer/USB_DEVICE/App/../../Core/Inc/stepper_motor.h
+ C:/Users/chde/Documents/3D_Printer/USB_DEVICE/App/../../Core/Inc/stepper_motor.h \
+ C:/Users/chde/Documents/3D_Printer/USB_DEVICE/App/../../Core/Inc/t_velocity.h \
+ C:/Users/chde/Documents/3D_Printer/USB_DEVICE/App/../../Core/Inc/main.h
