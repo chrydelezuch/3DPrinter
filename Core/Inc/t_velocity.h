@@ -6,7 +6,7 @@ typedef uint32_t t_velocity;
 
 
 uint8_t vel_get_dir(t_velocity vel);
-uint16_t vel_get_period(t_velocity vel);
+uint32_t vel_get_period(t_velocity vel);
 uint16_t vel_get_step_number(t_velocity vel);
 
 typedef enum

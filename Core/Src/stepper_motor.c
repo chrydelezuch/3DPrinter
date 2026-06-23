@@ -1,5 +1,8 @@
 #include "../Inc/stepper_motor.h"
 
+#define HOMING_STEP_PERIOD   10
+#define HOMING_INFINITE_STEPS 0xFFFF
+
 void stepper_motor_init(
     stepper_motor_t *motor,
     TIM_HandleTypeDef *const tim_handler,
@@ -9,69 +12,91 @@ void stepper_motor_init(
     const int step_counter,
     const int step_period
 ) {
+    if (motor == NULL || tim_handler == NULL || dir_port == NULL) {
+        return; /* invalid arguments */
+    }
+
     motor->tim_handler = tim_handler;
     motor->tim_channel = tim_channel;
     motor->dir_port = dir_port;
     motor->dir_pin = dir_pin;
-    motor->step_counter = step_counter;      // liczba kroków w jednej serii
-    motor->tick_counter = 0;                 // licznik impulsów timera
-    motor->step_period = step_period;        // liczba ticków między dwoma impulsami PWM
+    motor->step_counter = step_counter;       /* number of steps in one move series */
+    motor->tick_counter = 0;                  /* timer tick counter */
+    motor->step_period = step_period;         /* ticks between two PWM pulses */
     motor->pulse = 0;
-    motor->homing_step_period = 10;
-    motor->is_homing = 0;
+    motor->homing_step_period = HOMING_STEP_PERIOD;
+    motor->is_homing = 0U;
 }
 
 void set_motor_velocity_and_dir(stepper_motor_t *motor, const t_velocity *velocity) {
-    motor->step_period = vel_get_period(*velocity);
-    motor->step_counter = vel_get_step_number(*velocity);;
-    motor->pulse = vel_get_period(*velocity) >> 1;
+    uint32_t period;
+    uint8_t dir;
 
-    if (vel_get_dir(velocity) == DIR_STOP ) {
-        motor->pulse = 0; // zatrzymanie PWM jeśli kierunek = 0
+    if (motor == NULL || velocity == NULL) {
+        return;
     }
-    else if (vel_get_dir(velocity) == DIR_LEFT) {
+
+    period = vel_get_period(*velocity);
+    dir = vel_get_dir(*velocity);
+
+    motor->step_period = (int)period;
+    motor->step_counter = (int)vel_get_step_number(*velocity);
+    motor->pulse = (int)(period >> 1U);
+
+    if (dir == DIR_STOP) {
+        motor->pulse = 0; /* stop PWM when direction is STOP */
+    } else if (dir == DIR_LEFT) {
         HAL_GPIO_WritePin(motor->dir_port, motor->dir_pin, GPIO_PIN_SET);
-    }
-    else if (vel_get_dir(velocity) == DIR_RIGHT) {
+    } else if (dir == DIR_RIGHT) {
         HAL_GPIO_WritePin(motor->dir_port, motor->dir_pin, GPIO_PIN_RESET);
     }
 }
 
 void check_next_pulse(stepper_motor_t *motor) {
+    if (motor == NULL) {
+        return;
+    }
+
     if (motor->tick_counter == motor->step_period) {
         motor->tick_counter = 0;
         motor->step_counter--;
-        __HAL_TIM_SET_COMPARE(motor->tim_handler, motor->tim_channel, motor->pulse);
+        __HAL_TIM_SET_COMPARE(motor->tim_handler, motor->tim_channel, (uint32_t)motor->pulse);
     } else {
-        __HAL_TIM_SET_COMPARE(motor->tim_handler, motor->tim_channel, 0);
+        __HAL_TIM_SET_COMPARE(motor->tim_handler, motor->tim_channel, 0U);
         motor->tick_counter++;
     }
 }
 
-// Funkcja uruchamia ruch homing w kierunku endstopu
+/* Start homing movement toward endstop */
 void start_homing(stepper_motor_t *motor, const uint8_t dir_to_endstop) {
-    // ustaw kierunek w stronę endstopu
-    if (dir_to_endstop > 0)
-        HAL_GPIO_WritePin(motor->dir_port, motor->dir_pin, GPIO_PIN_SET);
-    else
-        HAL_GPIO_WritePin(motor->dir_port, motor->dir_pin, GPIO_PIN_RESET);
+    if (motor == NULL) {
+        return;
+    }
 
-    // ustaw sygnał PWM aby silnik ruszył
-    motor->pulse = motor->homing_step_period >> 1;
+    /* Set direction toward endstop */
+    if (dir_to_endstop > 0U) {
+        HAL_GPIO_WritePin(motor->dir_port, motor->dir_pin, GPIO_PIN_SET);
+    } else {
+        HAL_GPIO_WritePin(motor->dir_port, motor->dir_pin, GPIO_PIN_RESET);
+    }
+
+    /* Set PWM signal to start motor */
+    motor->pulse = HOMING_STEP_PERIOD >> 1;
     motor->tick_counter = 0;
-    motor->step_counter = 0xFFFF; // praktycznie nieskończony ruch w stronę endstopu
-    motor->is_homing = 1;
+    motor->step_counter = HOMING_INFINITE_STEPS; /* practically infinite movement toward endstop */
+    motor->is_homing = 1U;
 }
 
-// Funkcja zatrzymuje silnik po wykryciu endstopu
+/* Stop motor after endstop detection */
 void stop_homing(stepper_motor_t *motor) {
-    // wyłącz PWM
-    __HAL_TIM_SET_COMPARE(motor->tim_handler, motor->tim_channel, 0);
+    if (motor == NULL) {
+        return;
+    }
+
+    /* Disable PWM */
+    __HAL_TIM_SET_COMPARE(motor->tim_handler, motor->tim_channel, 0U);
     motor->pulse = 0;
     motor->tick_counter = 0;
     motor->step_counter = 0;
-    motor->is_homing = 0;
-
-    // opcjonalnie ustaw aktualną pozycję jako 0
-    // motor->current_position = 0; // jeśli masz pole current_position
+    motor->is_homing = 0U;
 }

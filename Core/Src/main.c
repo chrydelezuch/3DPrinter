@@ -74,9 +74,6 @@ PID_Controller pid_controller_print_head;
 circ_buf_t header_circ_buf;
 circ_buf_t usb_circ_buf;
 
-PID_Controller pid_controller_bed;
-PID_Controller pid_controller_print_head;
-
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -125,36 +122,36 @@ void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc)
 
 }
 
-uint8_t EXTI_debouncing(uint32_t last_press_time, uint32_t line_mask){
+#define DEBOUNCE_MS 20U
 
-	EXTI->PR = line_mask;
+static uint8_t EXTI_debouncing(volatile uint32_t *last_press_time, uint32_t line_mask)
+{
+    uint32_t now;
 
-	uint32_t now = HAL_GetTick();
+    EXTI->PR = line_mask;
 
-	if (now - last_press_time > 20)   // 20 ms debounce
-	{
-		last_press_time = now;
-		return 1;
-	}
+    now = HAL_GetTick();
 
-	return 0;
+    if ((now - *last_press_time) > DEBOUNCE_MS) {
+        *last_press_time = now;
+        return 1U;
+    }
+
+    return 0U;
 }
 
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 {
-    if(GPIO_Pin == ENDSTOP_X_Pin){
-    	 EXTI_debouncing(last_press_time_endstop_x, (1 << 4));
-    	 stop_homing(axis_map[0].motor);
-    }
-    else if(GPIO_Pin == ENDSTOP_Y_Pin){
-    	EXTI_debouncing(last_press_time_endstop_y, (1 << 3));
-    }
-    else if(GPIO_Pin == ENDSTOP_Z_Pin){
-    	EXTI_debouncing(last_press_time_endstop_z, (1 << 4));
-    }
-    else if(GPIO_Pin == EMERGENCY_STOP_IN_Pin){
-    	currentState = STATE_STOP;
-    	HAL_GPIO_WritePin(EMERGENCY_STOP_OUT_GPIO_Port, EMERGENCY_STOP_OUT_Pin, GPIO_PIN_RESET);
+    if (GPIO_Pin == ENDSTOP_X_Pin) {
+        (void)EXTI_debouncing(&last_press_time_endstop_x, (1U << 4U));
+        stop_homing(axis_map[0].motor);
+    } else if (GPIO_Pin == ENDSTOP_Y_Pin) {
+        (void)EXTI_debouncing(&last_press_time_endstop_y, (1U << 3U));
+    } else if (GPIO_Pin == ENDSTOP_Z_Pin) {
+        (void)EXTI_debouncing(&last_press_time_endstop_z, (1U << 4U));
+    } else if (GPIO_Pin == EMERGENCY_STOP_IN_Pin) {
+        currentState = STATE_STOP;
+        HAL_GPIO_WritePin(EMERGENCY_STOP_OUT_GPIO_Port, EMERGENCY_STOP_OUT_Pin, GPIO_PIN_RESET);
     }
 }
 /* USER CODE END 0 */
@@ -185,8 +182,8 @@ int main(void)
   circ_buf_init(&header_circ_buf, header_circ_buf_mem, AXIS_BUFFER_SIZE, 1);
   circ_buf_init(&usb_circ_buf, usb_circ_buf_mem, AXIS_BUFFER_SIZE, 1);
 
-  // ==== Initialize praser =====
-  prase_init();
+  /* Initialize parser */
+  parse_init();
   usb_praser_init(header_circ_buf, usb_circ_buf);
 
   // ===== Start PWM with interrupt =====
@@ -267,18 +264,21 @@ int main(void)
 					!axis_map[3].motor->is_homing) currentState = STATE_RUN;
 
 	  	}
+	  	break;
 	  	case STATE_RUN:
 	  	{
 	  		HAL_GPIO_WritePin(EMERGENCY_STOP_OUT_GPIO_Port, EMERGENCY_STOP_OUT_Pin, GPIO_PIN_SET);
 	  		usb_tx_process();
 	  		parse_frame(&header_circ_buf, &usb_circ_buf);
 	  	}
+	  	break;
 	  	case STATE_STOP:
 	  	{
 	  		if(HAL_GPIO_ReadPin(EMERGENCY_RESET_GPIO_Port,  EMERGENCY_RESET_Pin) ==  GPIO_PIN_SET){
 	  			currentState = STATE_RUN;
 	  		}
 	  	}
+	  	break;
 	  }
 
 	  HAL_ADC_Start_DMA(&hadc1, ADC_BUFFER, 2);

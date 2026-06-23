@@ -1,0 +1,97 @@
+1. GENERAL PRINCIPLES
+Code must be simple deterministic and fully statically analyzable
+Code must be suitable for safety critical embedded systems on STM32 microcontrollers
+Each module must have clear responsibility and separation of concerns
+
+2. CONTROL FLOW RULES
+Do NOT use goto statements
+Do NOT use setjmp or longjmp
+Do NOT use recursion direct or indirect
+Only use simple control structures if else switch for while
+All switch statements must be fully handled no missing cases unless default exists
+
+3. LOOP RULES
+Every loop must have a fixed compile time known upper bound
+Loop bounds must be provable by static analysis tools
+Loops must NOT depend on unpredictable runtime termination
+Example for i = 0 i < MAX i where MAX is constant
+
+4. MEMORY RULES
+No dynamic memory allocation after initialization
+Do NOT use malloc calloc realloc or free in runtime code
+Only static or stack allocation allowed
+All buffers must be pre allocated
+
+5. FUNCTION SIZE AND DESIGN RULES
+Each function must be 60 lines of code or less
+Each function must do only one clearly defined task
+Avoid mixing abstraction levels inside one function
+Keep functions small simple and readable
+
+6. ASSERTION RULES
+Each function must contain at least 2 assertions on average
+Assertions must be side effect free Boolean checks
+Assertions must detect abnormal or invalid conditions
+If assertion fails function must return an explicit error code
+Do NOT include assertions that can be proven always true or always false
+
+7. VARIABLE SCOPE RULES
+Declare variables in the smallest possible scope
+Do NOT declare variables at function top if not needed
+Initialize all variables before use
+
+8. ERROR HANDLING RULES
+All function return values must be checked by caller
+All input parameters must be validated by callee
+Never ignore errors from called functions
+Always propagate or handle errors explicitly
+
+9. PREPROCESSOR RULES
+Preprocessor use limited to include and simple macros
+No token pasting
+No variadic macros
+No recursive macros
+Macros must expand to a single valid syntactic expression
+Minimize use of conditional compilation
+
+10. POINTER RULES
+Only one level of pointer indirection allowed
+No double pointers
+No function pointers allowed
+Pointer dereference must not be hidden in macros or typedefs
+
+12. GLOBAL STATE RULES
+Minimize global variables
+Prefer passing data through function parameters
+If global state is required restrict it to module scope static only
+
+13. NAMING RULES
+Use clear descriptive names for variables functions and types
+Avoid abbreviations unless widely standard
+Do NOT use magic numbers
+Replace magic numbers with named constants
+
+14. INITIALIZATION RULES
+All variables must be explicitly initialized before use
+No uninitialized reads allowed
+
+15. COMPILER AND TOOLING RULES
+Code must compile with all warnings enabled Wall Wextra Wpedantic
+Code must compile with zero warnings
+Static analysis must be performed regularly daily recommended
+Code must pass static analysis with zero warnings
+
+16. CODE STYLE RULES
+Use consistent formatting across all modules
+One statement per line preferred
+Enable strict compiler settings
+Keep code readable and predictable
+
+17. MEMORY OWNERSHIP RULES
+Every memory buffer must have a clearly defined owner
+Ownership must NOT be ambiguous
+No shared ownership without explicit design
+
+18. DESIGN STRUCTURE RULES
+Avoid tight coupling between modules
+Keep dependencies strictly one direction where possible

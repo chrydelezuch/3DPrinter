@@ -45,9 +45,10 @@ void usb_tx_process(void)
     }
 }
 
-void prase_init(){
-	circ_buf_init(&tx_buffer, tx_buf_mem, TX_BUFFER_SIZE, 1);
-	seq_number_tx = 0;
+void parse_init(void)
+{
+    circ_buf_init(&tx_buffer, tx_buf_mem, TX_BUFFER_SIZE, 1U);
+    seq_number_tx = 0U;
 }
 
 uint16_t generate_next_seq(){

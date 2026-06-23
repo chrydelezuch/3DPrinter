@@ -1,7 +1,7 @@
-#include "main.h"
-
 #ifndef EMERGENCY_STOP_H
 #define EMERGENCY_STOP_H
+
+#include "main.h"
 
 void Stepper_Emergency_Stop();
 

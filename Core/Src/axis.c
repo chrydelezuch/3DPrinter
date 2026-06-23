@@ -36,16 +36,19 @@ axis_t channel_axis_map[AXIS_COUNT] =
 
 inline void process_axis(axis_t axis)
 {
-     stepper_motor_t *m = axis_map[axis].motor;
+    stepper_motor_t *m;
 
+    if (axis >= AXIS_COUNT) {
+        return;
+    }
+
+    m = axis_map[axis].motor;
     check_next_pulse(m);
 
-    if (m->step_counter <= 0)
-    {
+    if (m->step_counter <= 0) {
         t_velocity v;
 
-        if (circ_buf_pop(axis_map[axis].buffer, (uint8_t*)&v) == 0)
-        {
+        if (circ_buf_pop(axis_map[axis].buffer, (uint8_t*)&v) == 0) {
             set_motor_velocity_and_dir(m, &v);
         }
     }
@@ -53,12 +56,14 @@ inline void process_axis(axis_t axis)
 
 void axis_init(TIM_HandleTypeDef *const tim_handler)
 {
+    if (tim_handler == NULL) {
+        return;
+    }
 
-
-    circ_buf_init(&x_buffer, x_buffer_mem, AXIS_BUFFER_SIZE, 4);
-    circ_buf_init(&y_buffer, y_buffer_mem, AXIS_BUFFER_SIZE, 4);
-    circ_buf_init(&z_buffer, z_buffer_mem, AXIS_BUFFER_SIZE, 4);
-    circ_buf_init(&e_buffer, e_buffer_mem, AXIS_BUFFER_SIZE, 4);
+    (void)circ_buf_init(&x_buffer, x_buffer_mem, AXIS_BUFFER_SIZE, 4U);
+    (void)circ_buf_init(&y_buffer, y_buffer_mem, AXIS_BUFFER_SIZE, 4U);
+    (void)circ_buf_init(&z_buffer, z_buffer_mem, AXIS_BUFFER_SIZE, 4U);
+    (void)circ_buf_init(&e_buffer, e_buffer_mem, AXIS_BUFFER_SIZE, 4U);
 
 
     stepper_motor_init(&motor_X, tim_handler, TIM_CHANNEL_1,

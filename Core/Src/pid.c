@@ -1,6 +1,11 @@
 #include "pid.h"
 
-void PID_Init(PID_Controller *pid, float Kp, float Ki, float Kd, float output_min, float output_max) {
+void PID_Init(PID_Controller *pid, float Kp, float Ki, float Kd, float output_min, float output_max)
+{
+    if (pid == NULL) {
+        return;
+    }
+
     pid->Kp = Kp;
     pid->Ki = Ki;
     pid->Kd = Kd;
@@ -11,26 +16,44 @@ void PID_Init(PID_Controller *pid, float Kp, float Ki, float Kd, float output_mi
     pid->setpoint = 0.0f;
 }
 
-float PID_Compute(PID_Controller *pid, float measurement, float dt) {
-    float error = pid->setpoint - measurement;
+float PID_Compute(PID_Controller *pid, float measurement, float dt)
+{
+    float error;
+    float derivative;
+    float output;
+
+    if (pid == NULL) {
+        return 0.0f;
+    }
+
+    error = pid->setpoint - measurement;
     pid->integral += error * dt;
-    float derivative = (error - pid->last_error) / dt;
-    float output = pid->Kp * error + pid->Ki * pid->integral + pid->Kd * derivative;
+    derivative = (error - pid->last_error) / dt;
+    output = pid->Kp * error + pid->Ki * pid->integral + pid->Kd * derivative;
 
-
-    if(output > pid->output_max) output = pid->output_max;
-    if(output < pid->output_min) output = pid->output_min;
+    if (output > pid->output_max) {
+        output = pid->output_max;
+    }
+    if (output < pid->output_min) {
+        output = pid->output_min;
+    }
 
     pid->last_error = error;
     return output;
 }
 
-uint32_t PID_to_PWM(float pid_value, TIM_HandleTypeDef * htim, uint32_t channel) {
+uint32_t PID_to_PWM(float pid_value, TIM_HandleTypeDef *htim, uint32_t channel)
+{
+    uint32_t pwm_val;
 
-    // calcualte pwm in range 0-ARR
-    uint32_t pwm_val = (uint32_t)((pid_value / 100.0f) * htim->Init.Period);
+    if (htim == NULL) {
+        return 0U;
+    }
 
-    // set pwm on timers
+    /* Calculate PWM in range 0..ARR */
+    pwm_val = (uint32_t)((pid_value / 100.0f) * (float)htim->Init.Period);
+
+    /* Set PWM on timer */
     __HAL_TIM_SET_COMPARE(htim, channel, pwm_val);
 
     return pwm_val;

@@ -46,7 +46,7 @@ typedef struct
 
 
 
-void parse_init();
+void parse_init(void);
 
 
 // ###

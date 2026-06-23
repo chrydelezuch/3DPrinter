@@ -7,28 +7,37 @@ static inline int circ_buf_free_space(cbuf_handle_t c)
 
 int circ_buf_init(cbuf_handle_t c, void *buffer, int max_len, size_t elem_size)
 {
-    if (!c || !buffer || max_len <= 0 || elem_size == 0)
+    if ((c == NULL) || (buffer == NULL) || (max_len <= 0) || (elem_size == 0U)) {
         return -1;
+    }
 
     c->buffer = (uint8_t *)buffer;
     c->max_len = max_len;
     c->elem_size = elem_size;
     c->head = 0;
     c->tail = 0;
-    c->leftover_size=0;
+    c->leftover_size = 0U;
 
     return 0;
 }
 
 int circ_buf_push(cbuf_handle_t c, const void *data)
 {
-    int next = c->head + 1;
+    int next;
 
-    if (next >= c->max_len)
+    if ((c == NULL) || (data == NULL)) {
+        return -1;
+    }
+
+    next = c->head + 1;
+
+    if (next >= c->max_len) {
         next = 0;
+    }
 
-    if (next == c->tail)
-        return -1; // full
+    if (next == c->tail) {
+        return -1; /* buffer full */
+    }
 
     memcpy(&c->buffer[c->head * c->elem_size], data, c->elem_size);
     c->head = next;
@@ -38,10 +47,17 @@ int circ_buf_push(cbuf_handle_t c, const void *data)
 
 int circ_buf_push_many(cbuf_handle_t c, const void *data, size_t len)
 {
-    if (circ_buf_free_space(c) < (int)len)
-        return -1;
+    int next;
 
-    int next = c->head + (int)len;
+    if ((c == NULL) || (data == NULL)) {
+        return -1;
+    }
+
+    if (circ_buf_free_space(c) < (int)len) {
+        return -1;
+    }
+
+    next = c->head + (int)len;
 
     if (next >= c->max_len) {
         size_t first_part = c->max_len - c->head;
@@ -124,19 +140,22 @@ int circ_buf_push_many_uint8(cbuf_handle_t c, uint8_t *data, size_t len)
 int circ_buf_push_many_uint8(cbuf_handle_t c, uint8_t *data, size_t len)
 {
     int next;
+    size_t leftover;
 
-
-
-    if(c->leftover_size !=0){
-    	int size = c->elem_size - c->leftover_size;
-    	memcpy(c->leftover + c->leftover_size, data, size);
-    	data += size;
-    	len -= size;
-    	circ_buf_push(c, c->leftover);
-    	c->leftover_size = 0;
+    if ((c == NULL) || (data == NULL)) {
+        return -1;
     }
 
-    int leftover = len;
+    if (c->leftover_size != 0U) {
+        int size = (int)c->elem_size - (int)c->leftover_size;
+        memcpy(c->leftover + c->leftover_size, data, (size_t)size);
+        data += size;
+        len -= (size_t)size;
+        circ_buf_push(c, c->leftover);
+        c->leftover_size = 0U;
+    }
+
+    leftover = len;
     len /= c->elem_size;
     leftover -= len * c->elem_size;
 
@@ -176,10 +195,17 @@ int circ_buf_push_many_uint8(cbuf_handle_t c, uint8_t *data, size_t len)
 
 int circ_buf_pop(cbuf_handle_t c, void *data)
 {
-    if (c->head == c->tail)
-        return -1; // pusty
+    int next;
 
-    int next = c->tail + 1;
+    if ((c == NULL) || (data == NULL)) {
+        return -1;
+    }
+
+    if (c->head == c->tail) {
+        return -1; /* buffer empty */
+    }
+
+    next = c->tail + 1;
     if (next >= c->max_len)
         next = 0;
 
@@ -191,7 +217,9 @@ int circ_buf_pop(cbuf_handle_t c, void *data)
 
 void circ_buf_reset(cbuf_handle_t c)
 {
-    if (!c) return;
+    if (c == NULL) {
+        return;
+    }
 
     c->head = 0;
     c->tail = 0;
@@ -199,25 +227,33 @@ void circ_buf_reset(cbuf_handle_t c)
 
 bool circ_buf_empty(cbuf_handle_t c)
 {
-    if (!c) return true;
-    return circ_buf_free_space(c) == c->max_len - 1;
+    if (c == NULL) {
+        return true;
+    }
+    return circ_buf_free_space(c) == (c->max_len - 1);
 }
 
 bool circ_buf_full(cbuf_handle_t c)
 {
-    if (!c) return false;
+    if (c == NULL) {
+        return false;
+    }
     return circ_buf_free_space(c) == 0;
 }
 
 size_t circ_buf_capacity(cbuf_handle_t c)
 {
-    if (!c) return 0;
-    return (size_t)c->max_len - 1;
+    if (c == NULL) {
+        return 0U;
+    }
+    return (size_t)c->max_len - 1U;
 }
 
 size_t circ_buf_size(cbuf_handle_t c)
 {
-    if (!c) return 0;
+    if (c == NULL) {
+        return 0U;
+    }
     return (size_t)(c->max_len - circ_buf_free_space(c) - 1);
 }
 
