@@ -179,29 +179,29 @@ Core/Src/axis.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/3D_Printer.dir/build.make CMakeFiles/3D_Printer.dir/Core/Src/axis.c.s
 .PHONY : Core/Src/axis.c.s
 
-Core/Src/circular_buffer.obj: Core/Src/circular_buffer.c.obj
-.PHONY : Core/Src/circular_buffer.obj
+Core/Src/circ_buf.obj: Core/Src/circ_buf.c.obj
+.PHONY : Core/Src/circ_buf.obj
 
 # target to build an object file
-Core/Src/circular_buffer.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/3D_Printer.dir/build.make CMakeFiles/3D_Printer.dir/Core/Src/circular_buffer.c.obj
-.PHONY : Core/Src/circular_buffer.c.obj
+Core/Src/circ_buf.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/3D_Printer.dir/build.make CMakeFiles/3D_Printer.dir/Core/Src/circ_buf.c.obj
+.PHONY : Core/Src/circ_buf.c.obj
 
-Core/Src/circular_buffer.i: Core/Src/circular_buffer.c.i
-.PHONY : Core/Src/circular_buffer.i
+Core/Src/circ_buf.i: Core/Src/circ_buf.c.i
+.PHONY : Core/Src/circ_buf.i
 
 # target to preprocess a source file
-Core/Src/circular_buffer.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/3D_Printer.dir/build.make CMakeFiles/3D_Printer.dir/Core/Src/circular_buffer.c.i
-.PHONY : Core/Src/circular_buffer.c.i
+Core/Src/circ_buf.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/3D_Printer.dir/build.make CMakeFiles/3D_Printer.dir/Core/Src/circ_buf.c.i
+.PHONY : Core/Src/circ_buf.c.i
 
-Core/Src/circular_buffer.s: Core/Src/circular_buffer.c.s
-.PHONY : Core/Src/circular_buffer.s
+Core/Src/circ_buf.s: Core/Src/circ_buf.c.s
+.PHONY : Core/Src/circ_buf.s
 
 # target to generate assembly for a file
-Core/Src/circular_buffer.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/3D_Printer.dir/build.make CMakeFiles/3D_Printer.dir/Core/Src/circular_buffer.c.s
-.PHONY : Core/Src/circular_buffer.c.s
+Core/Src/circ_buf.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/3D_Printer.dir/build.make CMakeFiles/3D_Printer.dir/Core/Src/circ_buf.c.s
+.PHONY : Core/Src/circ_buf.c.s
 
 Core/Src/emergency_stop.obj: Core/Src/emergency_stop.c.obj
 .PHONY : Core/Src/emergency_stop.obj
@@ -633,9 +633,9 @@ help:
 	@echo "... Core/Src/axis.obj"
 	@echo "... Core/Src/axis.i"
 	@echo "... Core/Src/axis.s"
-	@echo "... Core/Src/circular_buffer.obj"
-	@echo "... Core/Src/circular_buffer.i"
-	@echo "... Core/Src/circular_buffer.s"
+	@echo "... Core/Src/circ_buf.obj"
+	@echo "... Core/Src/circ_buf.i"
+	@echo "... Core/Src/circ_buf.s"
 	@echo "... Core/Src/emergency_stop.obj"
 	@echo "... Core/Src/emergency_stop.i"
 	@echo "... Core/Src/emergency_stop.s"

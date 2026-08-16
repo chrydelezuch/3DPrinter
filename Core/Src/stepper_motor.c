@@ -1,13 +1,21 @@
+
+
 #include "../Inc/stepper_motor.h"
+
+#ifdef UNIT_TEST
+	#include "fake_hal.h"
+#else
+	#include "stm32f4xx_hal.h"
+#endif
 
 #define HOMING_STEP_PERIOD   10
 #define HOMING_INFINITE_STEPS 0xFFFF
 
 void stepper_motor_init(
     stepper_motor_t *motor,
-    TIM_HandleTypeDef *const tim_handler,
+    void *const tim_handler,
     const uint16_t tim_channel,
-    GPIO_TypeDef *const dir_port,
+    void *const dir_port,
     const uint16_t dir_pin,
     const int step_counter,
     const int step_period
@@ -46,9 +54,9 @@ void set_motor_velocity_and_dir(stepper_motor_t *motor, const t_velocity *veloci
     if (dir == DIR_STOP) {
         motor->pulse = 0; /* stop PWM when direction is STOP */
     } else if (dir == DIR_LEFT) {
-        HAL_GPIO_WritePin(motor->dir_port, motor->dir_pin, GPIO_PIN_SET);
+        HAL_GPIO_WritePin((GPIO_TypeDef *)motor->dir_port, motor->dir_pin, GPIO_PIN_SET);
     } else if (dir == DIR_RIGHT) {
-        HAL_GPIO_WritePin(motor->dir_port, motor->dir_pin, GPIO_PIN_RESET);
+        HAL_GPIO_WritePin((GPIO_TypeDef *)motor->dir_port, motor->dir_pin, GPIO_PIN_RESET);
     }
 }
 
@@ -60,9 +68,9 @@ void check_next_pulse(stepper_motor_t *motor) {
     if (motor->tick_counter == motor->step_period) {
         motor->tick_counter = 0;
         motor->step_counter--;
-        __HAL_TIM_SET_COMPARE(motor->tim_handler, motor->tim_channel, (uint32_t)motor->pulse);
+        __HAL_TIM_SET_COMPARE((TIM_HandleTypeDef *)motor->tim_handler, motor->tim_channel, (uint32_t)motor->pulse);
     } else {
-        __HAL_TIM_SET_COMPARE(motor->tim_handler, motor->tim_channel, 0U);
+    	__HAL_TIM_SET_COMPARE((TIM_HandleTypeDef *)motor->tim_handler, motor->tim_channel, 0U);
         motor->tick_counter++;
     }
 }
@@ -75,9 +83,9 @@ void start_homing(stepper_motor_t *motor, const uint8_t dir_to_endstop) {
 
     /* Set direction toward endstop */
     if (dir_to_endstop > 0U) {
-        HAL_GPIO_WritePin(motor->dir_port, motor->dir_pin, GPIO_PIN_SET);
+        HAL_GPIO_WritePin((GPIO_TypeDef *)motor->dir_port, motor->dir_pin, GPIO_PIN_SET);
     } else {
-        HAL_GPIO_WritePin(motor->dir_port, motor->dir_pin, GPIO_PIN_RESET);
+        HAL_GPIO_WritePin((GPIO_TypeDef *)motor->dir_port, motor->dir_pin, GPIO_PIN_RESET);
     }
 
     /* Set PWM signal to start motor */
@@ -94,7 +102,7 @@ void stop_homing(stepper_motor_t *motor) {
     }
 
     /* Disable PWM */
-    __HAL_TIM_SET_COMPARE(motor->tim_handler, motor->tim_channel, 0U);
+    __HAL_TIM_SET_COMPARE((TIM_HandleTypeDef *)motor->tim_handler, motor->tim_channel, 0U);
     motor->pulse = 0;
     motor->tick_counter = 0;
     motor->step_counter = 0;

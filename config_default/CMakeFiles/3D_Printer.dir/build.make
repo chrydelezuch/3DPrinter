@@ -208,19 +208,19 @@ CMakeFiles/3D_Printer.dir/startup_stm32f401xc.s.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling ASM source to assembly CMakeFiles/3D_Printer.dir/startup_stm32f401xc.s.s"
 	C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.100.202509120712/tools/bin/arm-none-eabi-gcc.exe $(ASM_DEFINES) $(ASM_INCLUDES) $(ASM_FLAGS) -S C:/Users/chde/Documents/3D_Printer/startup_stm32f401xc.s -o CMakeFiles/3D_Printer.dir/startup_stm32f401xc.s.s
 
-CMakeFiles/3D_Printer.dir/Core/Src/circular_buffer.c.obj: CMakeFiles/3D_Printer.dir/flags.make
-CMakeFiles/3D_Printer.dir/Core/Src/circular_buffer.c.obj: C:/Users/chde/Documents/3D_Printer/Core/Src/circular_buffer.c
-CMakeFiles/3D_Printer.dir/Core/Src/circular_buffer.c.obj: CMakeFiles/3D_Printer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:/Users/chde/Documents/3D_Printer/config_default/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object CMakeFiles/3D_Printer.dir/Core/Src/circular_buffer.c.obj"
-	C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.100.202509120712/tools/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/3D_Printer.dir/Core/Src/circular_buffer.c.obj -MF CMakeFiles/3D_Printer.dir/Core/Src/circular_buffer.c.obj.d -o CMakeFiles/3D_Printer.dir/Core/Src/circular_buffer.c.obj -c C:/Users/chde/Documents/3D_Printer/Core/Src/circular_buffer.c
+CMakeFiles/3D_Printer.dir/Core/Src/circ_buf.c.obj: CMakeFiles/3D_Printer.dir/flags.make
+CMakeFiles/3D_Printer.dir/Core/Src/circ_buf.c.obj: C:/Users/chde/Documents/3D_Printer/Core/Src/circ_buf.c
+CMakeFiles/3D_Printer.dir/Core/Src/circ_buf.c.obj: CMakeFiles/3D_Printer.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:/Users/chde/Documents/3D_Printer/config_default/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object CMakeFiles/3D_Printer.dir/Core/Src/circ_buf.c.obj"
+	C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.100.202509120712/tools/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/3D_Printer.dir/Core/Src/circ_buf.c.obj -MF CMakeFiles/3D_Printer.dir/Core/Src/circ_buf.c.obj.d -o CMakeFiles/3D_Printer.dir/Core/Src/circ_buf.c.obj -c C:/Users/chde/Documents/3D_Printer/Core/Src/circ_buf.c
 
-CMakeFiles/3D_Printer.dir/Core/Src/circular_buffer.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/3D_Printer.dir/Core/Src/circular_buffer.c.i"
-	C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.100.202509120712/tools/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:/Users/chde/Documents/3D_Printer/Core/Src/circular_buffer.c > CMakeFiles/3D_Printer.dir/Core/Src/circular_buffer.c.i
+CMakeFiles/3D_Printer.dir/Core/Src/circ_buf.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/3D_Printer.dir/Core/Src/circ_buf.c.i"
+	C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.100.202509120712/tools/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:/Users/chde/Documents/3D_Printer/Core/Src/circ_buf.c > CMakeFiles/3D_Printer.dir/Core/Src/circ_buf.c.i
 
-CMakeFiles/3D_Printer.dir/Core/Src/circular_buffer.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/3D_Printer.dir/Core/Src/circular_buffer.c.s"
-	C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.100.202509120712/tools/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:/Users/chde/Documents/3D_Printer/Core/Src/circular_buffer.c -o CMakeFiles/3D_Printer.dir/Core/Src/circular_buffer.c.s
+CMakeFiles/3D_Printer.dir/Core/Src/circ_buf.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/3D_Printer.dir/Core/Src/circ_buf.c.s"
+	C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.100.202509120712/tools/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:/Users/chde/Documents/3D_Printer/Core/Src/circ_buf.c -o CMakeFiles/3D_Printer.dir/Core/Src/circ_buf.c.s
 
 CMakeFiles/3D_Printer.dir/Core/Src/stepper_motor.c.obj: CMakeFiles/3D_Printer.dir/flags.make
 CMakeFiles/3D_Printer.dir/Core/Src/stepper_motor.c.obj: C:/Users/chde/Documents/3D_Printer/Core/Src/stepper_motor.c
@@ -360,7 +360,7 @@ CMakeFiles/3D_Printer.dir/Core/Src/remote_state.c.s: cmake_force
 "CMakeFiles/3D_Printer.dir/Core/Src/sysmem.c.obj" \
 "CMakeFiles/3D_Printer.dir/Core/Src/syscalls.c.obj" \
 "CMakeFiles/3D_Printer.dir/startup_stm32f401xc.s.obj" \
-"CMakeFiles/3D_Printer.dir/Core/Src/circular_buffer.c.obj" \
+"CMakeFiles/3D_Printer.dir/Core/Src/circ_buf.c.obj" \
 "CMakeFiles/3D_Printer.dir/Core/Src/stepper_motor.c.obj" \
 "CMakeFiles/3D_Printer.dir/Core/Src/emergency_stop.c.obj" \
 "CMakeFiles/3D_Printer.dir/Core/Src/system_check.c.obj" \
@@ -409,7 +409,7 @@ CMakeFiles/3D_Printer.dir/Core/Src/remote_state.c.s: cmake_force
 3D_Printer.elf: CMakeFiles/3D_Printer.dir/Core/Src/sysmem.c.obj
 3D_Printer.elf: CMakeFiles/3D_Printer.dir/Core/Src/syscalls.c.obj
 3D_Printer.elf: CMakeFiles/3D_Printer.dir/startup_stm32f401xc.s.obj
-3D_Printer.elf: CMakeFiles/3D_Printer.dir/Core/Src/circular_buffer.c.obj
+3D_Printer.elf: CMakeFiles/3D_Printer.dir/Core/Src/circ_buf.c.obj
 3D_Printer.elf: CMakeFiles/3D_Printer.dir/Core/Src/stepper_motor.c.obj
 3D_Printer.elf: CMakeFiles/3D_Printer.dir/Core/Src/emergency_stop.c.obj
 3D_Printer.elf: CMakeFiles/3D_Printer.dir/Core/Src/system_check.c.obj

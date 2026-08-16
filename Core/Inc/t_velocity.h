@@ -1,7 +1,7 @@
 #ifndef T_VELOCITY_H
 #define T_VELOCITY_H
 
-#include "main.h"
+#include <stdint.h>
 typedef uint32_t t_velocity;
 
 

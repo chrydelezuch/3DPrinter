@@ -2,8 +2,9 @@
 #define USB_PRASER_H
 
 #include <stdint.h>
+
+#include "circ_buf.h"
 #include "stm32f4xx_hal.h"
-#include "circular_buffer.h"
 
 
 void read_usb_praser(uint8_t* Buf, uint32_t Len);

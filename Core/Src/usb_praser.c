@@ -78,4 +78,3 @@ void read_usb_praser(uint8_t* Buf, uint32_t Len)
     }
 }
 
-

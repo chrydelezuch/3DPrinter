@@ -1,4 +1,5 @@
 #include "axis.h"
+#include "main.h"
 
 
 stepper_motor_t motor_X;
@@ -78,4 +79,3 @@ void axis_init(TIM_HandleTypeDef *const tim_handler)
     stepper_motor_init(&motor_extruder, tim_handler, TIM_CHANNEL_4,
                      DIR_EXTR_GPIO_Port, DIR_EXTR_Pin, 0, 1);
 }
-

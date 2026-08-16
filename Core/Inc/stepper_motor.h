@@ -1,14 +1,17 @@
 #ifndef STEPPER_MOTOR_H
 #define STEPPER_MOTOR_H
 
-#include <stdint.h>
-#include "stm32f4xx_hal.h"
 #include "t_velocity.h"
+#include <stddef.h>  // Dla NULL
+#include <stdint.h>  // Dla uint8_t, uint16_t, etc.
+
+
+
 
 typedef struct {
-    TIM_HandleTypeDef *tim_handler;
+    void *tim_handler;
     uint16_t tim_channel;
-    GPIO_TypeDef *dir_port;
+    void *dir_port;
     uint16_t dir_pin;
     int step_counter;
     int tick_counter;
@@ -20,9 +23,9 @@ typedef struct {
 
 void stepper_motor_init(
     stepper_motor_t *motor,
-    TIM_HandleTypeDef *const tim_handler,
+    void *const tim_handler,
     const uint16_t tim_channel,
-    GPIO_TypeDef *const dir_port,
+    void *const dir_port,
     const uint16_t dir_pin,
     const int step_counter,
     const int step_period

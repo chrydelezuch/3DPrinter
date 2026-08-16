@@ -3,13 +3,101 @@
   :file: test/test_stepper_motor.c
   :dirname: test
   :basename: test_stepper_motor.c
-:successes: []
+:successes:
+- :test: test_stepper_motor_init_should_set_all_fields_correctly
+  :line: 58
+  :message: ''
+  :unity_test_time: 0
+- :test: test_stepper_motor_init_with_null_motor_should_do_nothing
+  :line: 76
+  :message: ''
+  :unity_test_time: 0
+- :test: test_stepper_motor_init_with_null_timer_should_do_nothing
+  :line: 85
+  :message: ''
+  :unity_test_time: 0
+- :test: test_stepper_motor_init_with_null_port_should_do_nothing
+  :line: 94
+  :message: ''
+  :unity_test_time: 0
+- :test: test_set_motor_velocity_and_dir_should_set_direction_left
+  :line: 107
+  :message: ''
+  :unity_test_time: 0
+- :test: test_set_motor_velocity_and_dir_should_set_direction_right
+  :line: 120
+  :message: ''
+  :unity_test_time: 0
+- :test: test_set_motor_velocity_and_dir_with_stop_should_set_pulse_zero
+  :line: 133
+  :message: ''
+  :unity_test_time: 0
+- :test: test_set_motor_velocity_and_dir_with_null_motor_should_return
+  :line: 144
+  :message: ''
+  :unity_test_time: 0
+- :test: test_set_motor_velocity_and_dir_with_null_velocity_should_return
+  :line: 151
+  :message: ''
+  :unity_test_time: 0
+- :test: test_check_next_pulse_when_tick_equals_period_should_generate_pulse
+  :line: 164
+  :message: ''
+  :unity_test_time: 0
+- :test: test_check_next_pulse_when_tick_less_than_period_should_not_generate_pulse
+  :line: 179
+  :message: ''
+  :unity_test_time: 0
+- :test: test_check_next_pulse_with_null_motor_should_return
+  :line: 194
+  :message: ''
+  :unity_test_time: 0
+- :test: test_check_next_pulse_should_wrap_tick_counter_to_zero
+  :line: 200
+  :message: ''
+  :unity_test_time: 0
+- :test: test_start_homing_should_set_homing_mode
+  :line: 218
+  :message: ''
+  :unity_test_time: 0
+- :test: test_start_homing_should_set_direction_based_on_parameter
+  :line: 231
+  :message: ''
+  :unity_test_time: 0
+- :test: test_start_homing_with_null_motor_should_return
+  :line: 244
+  :message: ''
+  :unity_test_time: 0
+- :test: test_stop_homing_should_clear_homing_mode
+  :line: 250
+  :message: ''
+  :unity_test_time: 0
+- :test: test_stop_homing_with_null_motor_should_return
+  :line: 264
+  :message: ''
+  :unity_test_time: 0
+- :test: test_full_cycle_set_velocity_and_check_pulse
+  :line: 274
+  :message: ''
+  :unity_test_time: 0
+- :test: test_homing_cycle_start_and_stop
+  :line: 293
+  :message: ''
+  :unity_test_time: 0
+- :test: test_velocity_decoding_with_helpers
+  :line: 309
+  :message: ''
+  :unity_test_time: 0
+- :test: test_multiple_velocity_changes
+  :line: 322
+  :message: ''
+  :unity_test_time: 0
 :failures: []
 :ignores: []
 :counts:
-  :total: 0
-  :passed: 0
+  :total: 22
+  :passed: 22
   :failed: 0
   :ignored: 0
 :stdout: []
-:time: 0.21302509999986796
+:time: 0.1053107000188902

@@ -175,4 +175,3 @@ void parse_estop(Frame_t* frame)
     //send_frame(FRAME_ESTOP, 0, frame->seq, NULL, tx_buf);
 }
 
-

@@ -98,12 +98,12 @@
 :paths:
   :test:
     - +:test/**
-    - -:test/support
+  #  - -:test/support
   :source:
     - ../Core/Src/**
   :include:
     - ../Core/Inc** # In simple projects, this entry often duplicates :source
-    - test/support
+  #  - test/support
   :libraries: []
 
 # You can even specify specific files to add or remove from your test
@@ -120,7 +120,7 @@
 #  - Specifiying symbols used during test preprocessing
 :defines:
   :test:
-    - TEST # Simple list option to add symbol 'TEST' to compilation of all files in all test executables
+    - UNIT_TEST # Simple list option to add symbol 'TEST' to compilation of all files in all test executables
   :release: []
 
   # Enable to inject name of a test as a unique compilation symbol into its respective executable build. 

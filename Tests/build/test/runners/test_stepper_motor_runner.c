@@ -6,6 +6,9 @@
 #ifndef UNITY_EXCLUDE_FLOAT
 #define UNITY_EXCLUDE_FLOAT
 #endif /* UNITY_EXCLUDE_FLOAT */
+#include "stepper_motor.h"
+#include "fake_hal.h"
+#include "t_velocity.h"
 
 int GlobalExpectCount;
 int GlobalVerifyOrder;
@@ -14,6 +17,28 @@ char* GlobalOrderError;
 /*=======External Functions This Runner Calls=====*/
 extern void setUp(void);
 extern void tearDown(void);
+extern void test_stepper_motor_init_should_set_all_fields_correctly(void);
+extern void test_stepper_motor_init_with_null_motor_should_do_nothing(void);
+extern void test_stepper_motor_init_with_null_timer_should_do_nothing(void);
+extern void test_stepper_motor_init_with_null_port_should_do_nothing(void);
+extern void test_set_motor_velocity_and_dir_should_set_direction_left(void);
+extern void test_set_motor_velocity_and_dir_should_set_direction_right(void);
+extern void test_set_motor_velocity_and_dir_with_stop_should_set_pulse_zero(void);
+extern void test_set_motor_velocity_and_dir_with_null_motor_should_return(void);
+extern void test_set_motor_velocity_and_dir_with_null_velocity_should_return(void);
+extern void test_check_next_pulse_when_tick_equals_period_should_generate_pulse(void);
+extern void test_check_next_pulse_when_tick_less_than_period_should_not_generate_pulse(void);
+extern void test_check_next_pulse_with_null_motor_should_return(void);
+extern void test_check_next_pulse_should_wrap_tick_counter_to_zero(void);
+extern void test_start_homing_should_set_homing_mode(void);
+extern void test_start_homing_should_set_direction_based_on_parameter(void);
+extern void test_start_homing_with_null_motor_should_return(void);
+extern void test_stop_homing_should_clear_homing_mode(void);
+extern void test_stop_homing_with_null_motor_should_return(void);
+extern void test_full_cycle_set_velocity_and_check_pulse(void);
+extern void test_homing_cycle_start_and_stop(void);
+extern void test_velocity_decoding_with_helpers(void);
+extern void test_multiple_velocity_changes(void);
 
 
 /*=======Mock Management=====*/
@@ -29,12 +54,6 @@ static void CMock_Verify(void)
 static void CMock_Destroy(void)
 {
 }
-
-/*=======Setup (stub)=====*/
-void setUp(void) {}
-
-/*=======Teardown (stub)=====*/
-void tearDown(void) {}
 
 /*=======Test Reset Options=====*/
 void resetTest(void);
@@ -52,6 +71,34 @@ void verifyTest(void)
   CMock_Verify();
 }
 
+/*=======Test Runner Used To Run Each Test=====*/
+static void run_test(UnityTestFunction func, const char* name, UNITY_LINE_TYPE line_num)
+{
+    Unity.CurrentTestName = name;
+    Unity.CurrentTestLineNumber = (UNITY_UINT) line_num;
+#ifdef UNITY_USE_COMMAND_LINE_ARGS
+    if (!UnityTestMatches())
+        return;
+#endif
+    Unity.NumberOfTests++;
+    UNITY_CLR_DETAILS();
+    UNITY_EXEC_TIME_START();
+    CMock_Init();
+    if (TEST_PROTECT())
+    {
+        setUp();
+        func();
+    }
+    if (TEST_PROTECT())
+    {
+        tearDown();
+        CMock_Verify();
+    }
+    CMock_Destroy();
+    UNITY_EXEC_TIME_STOP();
+    UnityConcludeTest();
+}
+
 /*=======MAIN=====*/
  int main(int argc, char** argv)
 {
@@ -63,12 +110,78 @@ void verifyTest(void)
     {
       UnityPrint("test_stepper_motor.");
       UNITY_PRINT_EOL();
+      UnityPrint("  test_stepper_motor_init_should_set_all_fields_correctly");
+      UNITY_PRINT_EOL();
+      UnityPrint("  test_stepper_motor_init_with_null_motor_should_do_nothing");
+      UNITY_PRINT_EOL();
+      UnityPrint("  test_stepper_motor_init_with_null_timer_should_do_nothing");
+      UNITY_PRINT_EOL();
+      UnityPrint("  test_stepper_motor_init_with_null_port_should_do_nothing");
+      UNITY_PRINT_EOL();
+      UnityPrint("  test_set_motor_velocity_and_dir_should_set_direction_left");
+      UNITY_PRINT_EOL();
+      UnityPrint("  test_set_motor_velocity_and_dir_should_set_direction_right");
+      UNITY_PRINT_EOL();
+      UnityPrint("  test_set_motor_velocity_and_dir_with_stop_should_set_pulse_zero");
+      UNITY_PRINT_EOL();
+      UnityPrint("  test_set_motor_velocity_and_dir_with_null_motor_should_return");
+      UNITY_PRINT_EOL();
+      UnityPrint("  test_set_motor_velocity_and_dir_with_null_velocity_should_return");
+      UNITY_PRINT_EOL();
+      UnityPrint("  test_check_next_pulse_when_tick_equals_period_should_generate_pulse");
+      UNITY_PRINT_EOL();
+      UnityPrint("  test_check_next_pulse_when_tick_less_than_period_should_not_generate_pulse");
+      UNITY_PRINT_EOL();
+      UnityPrint("  test_check_next_pulse_with_null_motor_should_return");
+      UNITY_PRINT_EOL();
+      UnityPrint("  test_check_next_pulse_should_wrap_tick_counter_to_zero");
+      UNITY_PRINT_EOL();
+      UnityPrint("  test_start_homing_should_set_homing_mode");
+      UNITY_PRINT_EOL();
+      UnityPrint("  test_start_homing_should_set_direction_based_on_parameter");
+      UNITY_PRINT_EOL();
+      UnityPrint("  test_start_homing_with_null_motor_should_return");
+      UNITY_PRINT_EOL();
+      UnityPrint("  test_stop_homing_should_clear_homing_mode");
+      UNITY_PRINT_EOL();
+      UnityPrint("  test_stop_homing_with_null_motor_should_return");
+      UNITY_PRINT_EOL();
+      UnityPrint("  test_full_cycle_set_velocity_and_check_pulse");
+      UNITY_PRINT_EOL();
+      UnityPrint("  test_homing_cycle_start_and_stop");
+      UNITY_PRINT_EOL();
+      UnityPrint("  test_velocity_decoding_with_helpers");
+      UNITY_PRINT_EOL();
+      UnityPrint("  test_multiple_velocity_changes");
+      UNITY_PRINT_EOL();
       return 0;
     }
     return parse_status;
   }
 #endif
   UnityBegin("test_stepper_motor.c");
+  run_test(test_stepper_motor_init_should_set_all_fields_correctly, "test_stepper_motor_init_should_set_all_fields_correctly", 58);
+  run_test(test_stepper_motor_init_with_null_motor_should_do_nothing, "test_stepper_motor_init_with_null_motor_should_do_nothing", 76);
+  run_test(test_stepper_motor_init_with_null_timer_should_do_nothing, "test_stepper_motor_init_with_null_timer_should_do_nothing", 85);
+  run_test(test_stepper_motor_init_with_null_port_should_do_nothing, "test_stepper_motor_init_with_null_port_should_do_nothing", 94);
+  run_test(test_set_motor_velocity_and_dir_should_set_direction_left, "test_set_motor_velocity_and_dir_should_set_direction_left", 107);
+  run_test(test_set_motor_velocity_and_dir_should_set_direction_right, "test_set_motor_velocity_and_dir_should_set_direction_right", 120);
+  run_test(test_set_motor_velocity_and_dir_with_stop_should_set_pulse_zero, "test_set_motor_velocity_and_dir_with_stop_should_set_pulse_zero", 133);
+  run_test(test_set_motor_velocity_and_dir_with_null_motor_should_return, "test_set_motor_velocity_and_dir_with_null_motor_should_return", 144);
+  run_test(test_set_motor_velocity_and_dir_with_null_velocity_should_return, "test_set_motor_velocity_and_dir_with_null_velocity_should_return", 151);
+  run_test(test_check_next_pulse_when_tick_equals_period_should_generate_pulse, "test_check_next_pulse_when_tick_equals_period_should_generate_pulse", 164);
+  run_test(test_check_next_pulse_when_tick_less_than_period_should_not_generate_pulse, "test_check_next_pulse_when_tick_less_than_period_should_not_generate_pulse", 179);
+  run_test(test_check_next_pulse_with_null_motor_should_return, "test_check_next_pulse_with_null_motor_should_return", 194);
+  run_test(test_check_next_pulse_should_wrap_tick_counter_to_zero, "test_check_next_pulse_should_wrap_tick_counter_to_zero", 200);
+  run_test(test_start_homing_should_set_homing_mode, "test_start_homing_should_set_homing_mode", 218);
+  run_test(test_start_homing_should_set_direction_based_on_parameter, "test_start_homing_should_set_direction_based_on_parameter", 231);
+  run_test(test_start_homing_with_null_motor_should_return, "test_start_homing_with_null_motor_should_return", 244);
+  run_test(test_stop_homing_should_clear_homing_mode, "test_stop_homing_should_clear_homing_mode", 250);
+  run_test(test_stop_homing_with_null_motor_should_return, "test_stop_homing_with_null_motor_should_return", 264);
+  run_test(test_full_cycle_set_velocity_and_check_pulse, "test_full_cycle_set_velocity_and_check_pulse", 274);
+  run_test(test_homing_cycle_start_and_stop, "test_homing_cycle_start_and_stop", 293);
+  run_test(test_velocity_decoding_with_helpers, "test_velocity_decoding_with_helpers", 309);
+  run_test(test_multiple_velocity_changes, "test_multiple_velocity_changes", 322);
 
   return UNITY_END();
 }

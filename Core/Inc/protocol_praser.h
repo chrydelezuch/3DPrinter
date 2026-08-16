@@ -3,7 +3,8 @@
 
 #include <stdint.h>
 #include <stddef.h>
-#include "circular_buffer.h"
+
+#include "circ_buf.h"
 #include "usbd_cdc_if.h"
 
 #ifdef __cplusplus

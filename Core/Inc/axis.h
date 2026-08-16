@@ -2,9 +2,9 @@
 #define AXIS_H
 
 #include "stepper_motor.h"
-#include "circular_buffer.h"
-
 #include <stdint.h>
+
+#include "circ_buf.h"
 #include "stm32f4xx_hal.h"
 
 typedef enum

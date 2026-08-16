@@ -68,13 +68,12 @@ CMakeFiles/3D_Printer.dir/Core/Src/main.c.obj: \
  C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.100.202509120712/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/include/sys/string.h \
  C:/Users/chde/Documents/3D_Printer/Core/Inc/stepper_motor.h \
  C:/Users/chde/Documents/3D_Printer/Core/Inc/t_velocity.h \
- C:/Users/chde/Documents/3D_Printer/Core/Inc/main.h \
  C:/Users/chde/Documents/3D_Printer/Core/Inc/emergency_stop.h \
+ C:/Users/chde/Documents/3D_Printer/Core/Inc/main.h \
  C:/Users/chde/Documents/3D_Printer/Core/Inc/system_check.h \
  C:/Users/chde/Documents/3D_Printer/Core/Inc/axis.h \
  C:/Users/chde/Documents/3D_Printer/Core/Inc/stepper_motor.h \
- C:/Users/chde/Documents/3D_Printer/Core/Inc/circular_buffer.h \
- C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.100.202509120712/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/include/stdbool.h \
+ C:/Users/chde/Documents/3D_Printer/Core/Inc/circ_buf.h \
  C:/Users/chde/Documents/3D_Printer/Core/Inc/protocol_praser.h \
  C:/Users/chde/Documents/3D_Printer/cmake/stm32cubemx/../../USB_DEVICE/App/usbd_cdc_if.h \
  C:/Users/chde/Documents/3D_Printer/cmake/stm32cubemx/../../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc/usbd_cdc.h \
