@@ -4,16 +4,6 @@
   * @file           : main.c
   * @brief          : Main program body
   ******************************************************************************
-  * @attention
-  *
-  * Copyright (c) 2026 STMicroelectronics.
-  * All rights reserved.
-  *
-  * This software is licensed under terms that can be found in the LICENSE file
-  * in the root directory of this software component.
-  * If no LICENSE file comes with this software, it is provided AS-IS.
-  *
-  ******************************************************************************
   */
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
@@ -149,7 +139,9 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
         (void)EXTI_debouncing(&last_press_time_endstop_y, (1U << 3U));
     } else if (GPIO_Pin == ENDSTOP_Z_Pin) {
         (void)EXTI_debouncing(&last_press_time_endstop_z, (1U << 4U));
-    } else if (GPIO_Pin == EMERGENCY_STOP_IN_Pin) {
+    } 
+    else if (GPIO_Pin == EMERGENCY_STOP_IN_Pin) {
+        Emergency_Stop_Activate();
         currentState = STATE_STOP;
         HAL_GPIO_WritePin(EMERGENCY_STOP_OUT_GPIO_Port, EMERGENCY_STOP_OUT_Pin, GPIO_PIN_RESET);
     }
@@ -182,8 +174,8 @@ int main(void)
   circ_buf_init(&header_circ_buf, header_circ_buf_mem, AXIS_BUFFER_SIZE, 1);
   circ_buf_init(&usb_circ_buf, usb_circ_buf_mem, AXIS_BUFFER_SIZE, 1);
 
-  /* Initialize parser */
-  parse_init();
+  /* Initialize parsers */
+  parse_init(&header_circ_buf, &usb_circ_buf);
   usb_praser_init(header_circ_buf, usb_circ_buf);
 
   // ===== Start PWM with interrupt =====
@@ -241,7 +233,7 @@ int main(void)
 	  {
 	  	case STATE_INIT:
 	  	{
-	  		if (System_Check())
+	  		if (!System_Check())
 	  		{
 	  			start_homing(axis_map[0].motor, 1);
 	  			start_homing(axis_map[1].motor, 1);
@@ -269,13 +261,15 @@ int main(void)
 	  	{
 	  		HAL_GPIO_WritePin(EMERGENCY_STOP_OUT_GPIO_Port, EMERGENCY_STOP_OUT_Pin, GPIO_PIN_SET);
 	  		usb_tx_process();
-	  		parse_frame(&header_circ_buf, &usb_circ_buf);
+        uint8_t flag = 0;
+	  		parse_frame(&flag);
 	  	}
 	  	break;
 	  	case STATE_STOP:
 	  	{
 	  		if(HAL_GPIO_ReadPin(EMERGENCY_RESET_GPIO_Port,  EMERGENCY_RESET_Pin) ==  GPIO_PIN_SET){
 	  			currentState = STATE_RUN;
+          Emergency_Stop_Reset();
 	  		}
 	  	}
 	  	break;

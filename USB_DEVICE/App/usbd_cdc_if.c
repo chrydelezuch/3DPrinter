@@ -265,7 +265,8 @@ static int8_t CDC_Receive_FS(uint8_t* Buf, uint32_t *Len)
   /* USER CODE BEGIN 6 */
 
 
-  circ_buf_push_many_uint8(axis_map[0].motor, Buf, *Len);
+  //circ_buf_push_many_uint8(axis_map[0].motor, Buf, *Len);
+  read_usb_praser(Buf, &Len);
   USBD_CDC_SetRxBuffer(&hUsbDeviceFS, &Buf[0]);
   USBD_CDC_ReceivePacket(&hUsbDeviceFS);
 

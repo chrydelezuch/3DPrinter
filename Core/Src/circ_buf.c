@@ -127,3 +127,7 @@ unsigned int circ_buf_pop_many(circ_buf_t *self, void *buf, unsigned int item_co
 	self->out += item_count;
 	return item_count / self->esize;
 }
+
+void circ_buf_skip(circ_buf_t *self, int len){
+	self->out += len;
+};

@@ -202,4 +202,7 @@ unsigned int circ_buf_pop_many(circ_buf_t *self,
                                void *buf,
                                unsigned int item_count);
 
+
+void circ_buf_skip(circ_buf_t *self, int len);
+
 #endif /* CIRC_BUF_H */

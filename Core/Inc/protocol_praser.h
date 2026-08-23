@@ -18,13 +18,15 @@ extern "C" {
 
 typedef enum {
     FRAME_SYNC         = 0x01,
-    FRAME_STATUS_REQ   = 0x02,
-    FRAME_STATUS_RESP  = 0x03,
-    FRAME_ESTOP        = 0x04,
-    FRAME_MOVE_X       = 0x05,
-    FRAME_MOVE_Y       = 0x06,
-    FRAME_MOVE_Z       = 0x07,
-    FRAME_MOVE_E       = 0x08
+    FRAME_SYNC_ACK     = 0x02,
+    FRAME_ACK          = 0x03,
+    FRAME_STATUS_REQ   = 0x04,
+    FRAME_STATUS_RESP  = 0x05,
+    FRAME_ESTOP        = 0x06,
+    FRAME_MOVE_X       = 0x07,
+    FRAME_MOVE_Y       = 0x08,
+    FRAME_MOVE_Z       = 0x09,
+    FRAME_MOVE_E       = 0x10
 } FrameType_e;
 
 
@@ -47,7 +49,8 @@ typedef struct
 
 
 
-void parse_init(void);
+void parse_init(cbuf_handle_t header_circ_buf,
+                 cbuf_handle_t usb_circ_buf);
 
 
 // ###
@@ -57,11 +60,14 @@ void parse_init(void);
 void usb_tx_process(void);
 
 
+void send_sync(void);
 
 
-void parse_sync(Frame_t* frame);
-void parse_status_req(Frame_t* frame);
-void parse_status_resp(Frame_t* frame);
+
+
+void parse_sync(Frame_t* frame, uint8_t * flag);
+void parse_status_req(Frame_t* frame, uint8_t * flag);
+void parse_status_resp(Frame_t* frame, uint8_t * flag);
 void parse_estop(Frame_t* frame);
 
 
@@ -69,8 +75,7 @@ void parse_estop(Frame_t* frame);
 // main praser
 // ###
 
-void parse_frame(cbuf_handle_t header_circ_buf,
-                 cbuf_handle_t usb_circ_buf);
+void parse_frame(uint8_t * flag);
 
 
 #ifdef __cplusplus
