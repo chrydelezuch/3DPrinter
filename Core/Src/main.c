@@ -261,7 +261,7 @@ int main(void)
 	  	{
 	  		HAL_GPIO_WritePin(EMERGENCY_STOP_OUT_GPIO_Port, EMERGENCY_STOP_OUT_Pin, GPIO_PIN_SET);
 	  		usb_tx_process();
-        uint8_t flag = 0;
+	  		uint8_t flag = 0;
 	  		parse_frame(&flag);
 	  	}
 	  	break;

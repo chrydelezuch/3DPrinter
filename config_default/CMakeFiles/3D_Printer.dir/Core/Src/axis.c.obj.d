@@ -2,6 +2,7 @@ CMakeFiles/3D_Printer.dir/Core/Src/axis.c.obj: \
  C:/Users/chde/Documents/3D_Printer/Core/Src/axis.c \
  C:/Users/chde/Documents/3D_Printer/Core/Inc/axis.h \
  C:/Users/chde/Documents/3D_Printer/Core/Inc/stepper_motor.h \
+ C:/Users/chde/Documents/3D_Printer/Core/Inc/t_velocity.h \
  C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.100.202509120712/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/include/stdint.h \
  C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.100.202509120712/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/include/stdint.h \
  C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.100.202509120712/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/include/machine/_default_types.h \
@@ -9,7 +10,7 @@ CMakeFiles/3D_Printer.dir/Core/Src/axis.c.obj: \
  C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.100.202509120712/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/include/_newlib_version.h \
  C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.100.202509120712/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/include/sys/_intsup.h \
  C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.100.202509120712/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/include/sys/_stdint.h \
- C:/Users/chde/Documents/3D_Printer/Core/Inc/t_velocity.h \
+ C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.100.202509120712/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/include/stddef.h \
  C:/Users/chde/Documents/3D_Printer/Core/Inc/circ_buf.h \
  C:/Users/chde/Documents/3D_Printer/cmake/stm32cubemx/../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
  C:/Users/chde/Documents/3D_Printer/Core/Inc/stm32f4xx_hal_conf.h \
@@ -24,7 +25,6 @@ CMakeFiles/3D_Printer.dir/Core/Src/axis.c.obj: \
  C:/Users/chde/Documents/3D_Printer/cmake/stm32cubemx/../../Drivers/CMSIS/Include/mpu_armv7.h \
  C:/Users/chde/Documents/3D_Printer/cmake/stm32cubemx/../../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h \
  C:/Users/chde/Documents/3D_Printer/cmake/stm32cubemx/../../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h \
- C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.100.202509120712/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/include/stddef.h \
  C:/Users/chde/Documents/3D_Printer/cmake/stm32cubemx/../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h \
  C:/Users/chde/Documents/3D_Printer/cmake/stm32cubemx/../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h \
  C:/Users/chde/Documents/3D_Printer/cmake/stm32cubemx/../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h \
