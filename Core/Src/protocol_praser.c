@@ -145,6 +145,17 @@ void send_sync(void)
     send_frame(&frame);
 }
 
+
+//TO DO
+void parse_status_resp(Frame_t *frame){
+	return;
+}
+
+//TO DO
+void parse_estop(Frame_t *frame){
+	return;
+}
+
 void parse_sync_ack(Frame_t *frame, uint8_t *flag)
 {
     if (frame->payload_len < 4)
