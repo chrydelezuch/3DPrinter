@@ -111,8 +111,8 @@ void parse_frame(uint8_t *flag)
 
     switch (frame.type)
     {
-        case FRAME_SYNC:
-            parse_sync(&frame, flag);
+        case FRAME_SYNC_ACK:
+            parse_sync_ack(&frame, flag);
             break;
 
         case FRAME_STATUS_REQ:
@@ -145,7 +145,7 @@ void send_sync(void)
     send_frame(&frame);
 }
 
-void parse_sync(Frame_t *frame, uint8_t *flag)
+void parse_sync_ack(Frame_t *frame, uint8_t *flag)
 {
     if (frame->payload_len < 4)
         return;

@@ -93,7 +93,7 @@ void send_status_req(void);
 // Parsing frames
 // ############################################################
 
-void parse_sync(Frame_t *frame,
+void parse_sync_ack(Frame_t *frame,
                 uint8_t *flag);
 
 void parse_status_req(Frame_t *frame);
