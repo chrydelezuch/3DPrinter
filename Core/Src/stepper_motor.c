@@ -1,6 +1,7 @@
 
 
 #include "../Inc/stepper_motor.h"
+#include "../Inc/debug.h"
 
 #ifdef UNIT_TEST
 	#include "fake_hal.h"
@@ -20,8 +21,17 @@ void stepper_motor_init(
     const int step_counter,
     const int step_period
 ) {
-    if (motor == NULL || tim_handler == NULL || dir_port == NULL) {
+    if ((motor == NULL) || (tim_handler == NULL) || (dir_port == NULL)) {
+        debug_error("stepper_motor_init: NULL argument\r\n");
         return; /* invalid arguments */
+    }
+
+    if ((tim_channel != TIM_CHANNEL_1) &&
+        (tim_channel != TIM_CHANNEL_2) &&
+        (tim_channel != TIM_CHANNEL_3) &&
+        (tim_channel != TIM_CHANNEL_4)) {
+        debug_error("stepper_motor_init: invalid channel %u\r\n", (unsigned)tim_channel);
+        return;
     }
 
     motor->tim_handler = tim_handler;
@@ -40,12 +50,17 @@ void set_motor_velocity_and_dir(stepper_motor_t *motor, const t_velocity *veloci
     uint32_t period;
     uint8_t dir;
 
-    if (motor == NULL || velocity == NULL) {
+    if ((motor == NULL) || (velocity == NULL)) {
+        debug_error("set_motor_velocity_and_dir: NULL argument\r\n");
         return;
     }
 
     period = vel_get_period(*velocity);
     dir = vel_get_dir(*velocity);
+
+    if (period == 0U) {
+        debug_warn("set_motor_velocity_and_dir: zero period\r\n");
+    }
 
     motor->step_period = (int)period;
     motor->step_counter = (int)vel_get_step_number(*velocity);
@@ -57,11 +72,15 @@ void set_motor_velocity_and_dir(stepper_motor_t *motor, const t_velocity *veloci
         HAL_GPIO_WritePin((GPIO_TypeDef *)motor->dir_port, motor->dir_pin, GPIO_PIN_SET);
     } else if (dir == DIR_RIGHT) {
         HAL_GPIO_WritePin((GPIO_TypeDef *)motor->dir_port, motor->dir_pin, GPIO_PIN_RESET);
+    } else {
+        debug_error("set_motor_velocity_and_dir: invalid direction %u\r\n", (unsigned)dir);
+        motor->pulse = 0;
+        return;
     }
 }
 
 void check_next_pulse(stepper_motor_t *motor) {
-    if (motor == NULL) {
+    if ((motor == NULL) || (motor->tim_handler == NULL)) {
         return;
     }
 
@@ -77,7 +96,8 @@ void check_next_pulse(stepper_motor_t *motor) {
 
 /* Start homing movement toward endstop */
 void start_homing(stepper_motor_t *motor, const uint8_t dir_to_endstop) {
-    if (motor == NULL) {
+    if ((motor == NULL) || (motor->dir_port == NULL)) {
+        debug_error("start_homing: invalid motor\r\n");
         return;
     }
 
@@ -97,7 +117,8 @@ void start_homing(stepper_motor_t *motor, const uint8_t dir_to_endstop) {
 
 /* Stop motor after endstop detection */
 void stop_homing(stepper_motor_t *motor) {
-    if (motor == NULL) {
+    if ((motor == NULL) || (motor->tim_handler == NULL)) {
+        debug_error("stop_homing: invalid motor\r\n");
         return;
     }
 

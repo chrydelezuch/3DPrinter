@@ -22,6 +22,7 @@
 #include "stm32f4xx_it.h"
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+#include "debug.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -51,6 +52,55 @@
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+
+/*
+ * Dump the Cortex-M exception frame and the fault status registers.
+ * Diagnostics only: the fault handlers still halt afterwards.
+ */
+static void dump_fault_registers(const char *fault_name)
+{
+    uint32_t msp_value;
+    uint32_t psp_value;
+    uint32_t link_register;
+    uint32_t *stack_frame;
+
+    __ASM volatile ("mrs %0, msp" : "=r" (msp_value));
+    __ASM volatile ("mrs %0, psp" : "=r" (psp_value));
+    __ASM volatile ("mov %0, lr" : "=r" (link_register));
+
+    /* EXC_RETURN bit 2 selects the stack that was active at the fault. */
+    if ((link_register & 0x4U) != 0U) {
+        stack_frame = (uint32_t *)psp_value;
+    } else {
+        stack_frame = (uint32_t *)msp_value;
+    }
+
+    if (stack_frame == NULL) {
+        debug_error("FAULT %s: no stack frame available\r\n", fault_name);
+        return;
+    }
+
+    debug_error("FAULT %s pc=0x%08lx lr=0x%08lx psr=0x%08lx\r\n",
+                fault_name,
+                (unsigned long)stack_frame[6],
+                (unsigned long)stack_frame[5],
+                (unsigned long)stack_frame[7]);
+
+    debug_error("FAULT %s r0=0x%08lx r1=0x%08lx r2=0x%08lx r3=0x%08lx r12=0x%08lx\r\n",
+                fault_name,
+                (unsigned long)stack_frame[0],
+                (unsigned long)stack_frame[1],
+                (unsigned long)stack_frame[2],
+                (unsigned long)stack_frame[3],
+                (unsigned long)stack_frame[4]);
+
+    debug_error("FAULT %s cfsr=0x%08lx hfsr=0x%08lx mmfar=0x%08lx bfar=0x%08lx\r\n",
+                fault_name,
+                (unsigned long)SCB->CFSR,
+                (unsigned long)SCB->HFSR,
+                (unsigned long)SCB->MMFAR,
+                (unsigned long)SCB->BFAR);
+}
 
 /* USER CODE END 0 */
 
@@ -86,7 +136,7 @@ void NMI_Handler(void)
 void HardFault_Handler(void)
 {
   /* USER CODE BEGIN HardFault_IRQn 0 */
-
+  dump_fault_registers("HARDFAULT");
   /* USER CODE END HardFault_IRQn 0 */
   while (1)
   {
@@ -101,7 +151,7 @@ void HardFault_Handler(void)
 void MemManage_Handler(void)
 {
   /* USER CODE BEGIN MemoryManagement_IRQn 0 */
-
+  dump_fault_registers("MEMMANAGE");
   /* USER CODE END MemoryManagement_IRQn 0 */
   while (1)
   {
@@ -116,7 +166,7 @@ void MemManage_Handler(void)
 void BusFault_Handler(void)
 {
   /* USER CODE BEGIN BusFault_IRQn 0 */
-
+  dump_fault_registers("BUSFAULT");
   /* USER CODE END BusFault_IRQn 0 */
   while (1)
   {
@@ -131,7 +181,7 @@ void BusFault_Handler(void)
 void UsageFault_Handler(void)
 {
   /* USER CODE BEGIN UsageFault_IRQn 0 */
-
+  dump_fault_registers("USAGEFAULT");
   /* USER CODE END UsageFault_IRQn 0 */
   while (1)
   {

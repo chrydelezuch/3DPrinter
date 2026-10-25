@@ -13,6 +13,7 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
+#include "debug.h"
 #include "stepper_motor.h"
 #include "emergency_stop.h"
 #include "system_check.h"
@@ -51,6 +52,8 @@ volatile uint32_t last_press_time_endstop_x = 0;
 volatile uint32_t last_press_time_endstop_y = 0;
 volatile uint32_t last_press_time_endstop_z = 0;
 volatile SystemState_t currentState = STATE_INIT;
+
+static uint8_t adc_dma_error_reported = 0U;
 
 static uint8_t header_circ_buf_mem[HEADER_BUFFER_SIZE];
 static uint8_t usb_circ_buf_mem[USB_BUFFER_SIZE];
@@ -139,13 +142,54 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
         (void)EXTI_debouncing(&last_press_time_endstop_y, (1U << 3U));
     } else if (GPIO_Pin == ENDSTOP_Z_Pin) {
         (void)EXTI_debouncing(&last_press_time_endstop_z, (1U << 4U));
-    } 
+    }
     else if (GPIO_Pin == EMERGENCY_STOP_IN_Pin) {
         Emergency_Stop_Activate();
         currentState = STATE_STOP;
         HAL_GPIO_WritePin(EMERGENCY_STOP_OUT_GPIO_Port, EMERGENCY_STOP_OUT_Pin, GPIO_PIN_RESET);
     }
 }
+
+static void start_stepper_pwm_channels(void)
+{
+    if (HAL_TIM_PWM_Start_IT(&htim3, TIM_CHANNEL_1) != HAL_OK) {
+        debug_error("TIM3 CH1 PWM start failed\r\n");
+        Error_Handler();
+    }
+    if (HAL_TIM_PWM_Start_IT(&htim3, TIM_CHANNEL_2) != HAL_OK) {
+        debug_error("TIM3 CH2 PWM start failed\r\n");
+        Error_Handler();
+    }
+    if (HAL_TIM_PWM_Start_IT(&htim3, TIM_CHANNEL_3) != HAL_OK) {
+        debug_error("TIM3 CH3 PWM start failed\r\n");
+        Error_Handler();
+    }
+    if (HAL_TIM_PWM_Start_IT(&htim3, TIM_CHANNEL_4) != HAL_OK) {
+        debug_error("TIM3 CH4 PWM start failed\r\n");
+        Error_Handler();
+    }
+}
+
+static void start_heater_pwm_channels(void)
+{
+    if (HAL_TIM_PWM_Start_IT(&htim4, TIM_CHANNEL_1) != HAL_OK) {
+        debug_error("TIM4 CH1 PWM start failed\r\n");
+        Error_Handler();
+    }
+    if (HAL_TIM_PWM_Start_IT(&htim4, TIM_CHANNEL_2) != HAL_OK) {
+        debug_error("TIM4 CH2 PWM start failed\r\n");
+        Error_Handler();
+    }
+}
+
+static void start_stepper_base_timer(void)
+{
+    if (HAL_TIM_Base_Start_IT(&htim3) != HAL_OK) {
+        debug_error("TIM3 base timer start failed\r\n");
+        Error_Handler();
+    }
+}
+
 /* USER CODE END 0 */
 
 /**
@@ -162,7 +206,12 @@ int main(void)
   /* MCU Configuration--------------------------------------------------------*/
 
   /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
-  HAL_Init();
+  if (HAL_Init() != HAL_OK)
+  {
+    Error_Handler();
+  }
+
+  debug_init();
 
   /* USER CODE BEGIN Init */
 
@@ -179,17 +228,13 @@ int main(void)
   usb_praser_init(header_circ_buf, usb_circ_buf);
 
   // ===== Start PWM with interrupt =====
-  HAL_TIM_PWM_Start_IT(&htim3, TIM_CHANNEL_1);
-  HAL_TIM_PWM_Start_IT(&htim3, TIM_CHANNEL_2);
-  HAL_TIM_PWM_Start_IT(&htim3, TIM_CHANNEL_3);
-  HAL_TIM_PWM_Start_IT(&htim3, TIM_CHANNEL_4);
+  start_stepper_pwm_channels();
 
   // ===== Start PWM without interrupt =====
-  HAL_TIM_PWM_Start_IT(&htim4, TIM_CHANNEL_1);
-  HAL_TIM_PWM_Start_IT(&htim4, TIM_CHANNEL_2);
+  start_heater_pwm_channels();
 
   // ===== Start base timer interrupt =====
-  HAL_TIM_Base_Start_IT(&htim3);
+  start_stepper_base_timer();
 
   // Default directions HIGH
   HAL_GPIO_WritePin(motor_X.dir_port, motor_X.dir_pin, GPIO_PIN_SET);
@@ -275,7 +320,18 @@ int main(void)
 	  	break;
 	  }
 
-	  HAL_ADC_Start_DMA(&hadc1, ADC_BUFFER, 2);
+	  if (HAL_ADC_Start_DMA(&hadc1, ADC_BUFFER, 2) != HAL_OK)
+	  {
+	   if (adc_dma_error_reported == 0U)
+	   {
+	    debug_error("ADC DMA start failed\r\n");
+	    adc_dma_error_reported = 1U;
+	   }
+	  }
+	  else
+	  {
+	   adc_dma_error_reported = 0U;
+	  }
 
 	  HAL_Delay(5);
     /* USER CODE END WHILE */
@@ -618,6 +674,7 @@ void Error_Handler(void)
   /* USER CODE BEGIN Error_Handler_Debug */
   /* User can add his own implementation to report the HAL error return state */
   __disable_irq();
+  debug_error("FATAL: Error_Handler entered - system halted\r\n");
   while (1)
   {
   }
@@ -636,6 +693,9 @@ void assert_failed(uint8_t *file, uint32_t line)
   /* USER CODE BEGIN 6 */
   /* User can add his own implementation to report the file name and line number,
      ex: printf("Wrong parameters value: file %s on line %d\r\n", file, line) */
+  debug_error("HAL PARAM ASSERT: file %s line %lu\r\n",
+              (const char *)file,
+              (unsigned long)line);
   /* USER CODE END 6 */
 }
 #endif /* USE_FULL_ASSERT */

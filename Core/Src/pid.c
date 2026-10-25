@@ -1,9 +1,15 @@
 #include "pid.h"
+#include "debug.h"
 
 void PID_Init(PID_Controller *pid, float Kp, float Ki, float Kd, float output_min, float output_max)
 {
     if (pid == NULL) {
+        debug_error("PID_Init: NULL controller\r\n");
         return;
+    }
+
+    if (output_min > output_max) {
+        debug_error("PID_Init: invalid output range\r\n");
     }
 
     pid->Kp = Kp;
@@ -23,6 +29,12 @@ float PID_Compute(PID_Controller *pid, float measurement, float dt)
     float output;
 
     if (pid == NULL) {
+        debug_error("PID_Compute: NULL controller\r\n");
+        return 0.0f;
+    }
+
+    if (dt <= 0.0f) {
+        debug_error("PID_Compute: invalid time step\r\n");
         return 0.0f;
     }
 
@@ -47,11 +59,22 @@ uint32_t PID_to_PWM(float pid_value, TIM_HandleTypeDef *htim, uint32_t channel)
     uint32_t pwm_val;
 
     if (htim == NULL) {
+        debug_error("PID_to_PWM: NULL timer handle\r\n");
+        return 0U;
+    }
+
+    if (htim->Init.Period == 0U) {
+        debug_error("PID_to_PWM: timer period is zero\r\n");
         return 0U;
     }
 
     /* Calculate PWM in range 0..ARR */
     pwm_val = (uint32_t)((pid_value / 100.0f) * (float)htim->Init.Period);
+
+    if (pwm_val > htim->Init.Period) {
+        debug_warn("PID_to_PWM: clamping value to timer period\r\n");
+        pwm_val = htim->Init.Period;
+    }
 
     /* Set PWM on timer */
     __HAL_TIM_SET_COMPARE(htim, channel, pwm_val);

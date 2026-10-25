@@ -1,5 +1,6 @@
 #include "system_check.h"
 #include "protocol_praser.h"
+#include "debug.h"
 #include "stm32f4xx_hal.h"
 
 // first bit from the right is comunication
@@ -34,10 +35,12 @@ uint8_t System_Check(void)
         }
 
         if(usb_flag == FRAME_SYNC_ACK ){
+            debug_info("System_Check: USB sync established\r\n");
             error_code |= (~0x02); // reset timeout error / set timeout error to 1
             break;
         }
 
+        debug_warn("System_Check: USB sync attempt %d timed out\r\n", i + 1);
     }
     
     
@@ -47,3 +50,7 @@ uint8_t System_Check(void)
 }
 
 uint8_t get_error_code() {return error_code;}
+
+/* Symbol name used by Inc/system_check.h. Kept separate from get_error_code
+ * so the existing definition is not modified. */
+uint8_t getErrorCode(void) {return error_code;}

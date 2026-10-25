@@ -240,6 +240,14 @@ payload bytes to the appropriate circular buffer:
 `parse_frame()` reads the header from `header_circ_buf`, then the payload from
 `usb_circ_buf`, and dispatches by frame type.
 
+The connection is established via the System_Check() function in the STATE_INIT state and takes the form of a 3-way handshake:
+
+(FRAME_SYNC)        3d Printer -> HOST
+(FRAME_SYNC_ACK)    3d Printer <- HOST
+(FRAME_ACK)         3d Printer <- HOST
+
+This is followed by the transmission of subsequent packets containing the planned steps.
+
 ### 8.1 Frame structure
 
 ```c
@@ -357,3 +365,141 @@ corresponding functionality is completed:
 - Step-rate / feed-rate calibration data.
 - Heater tuning results.
 - Wiring / pinout table.
+
+---
+
+## 14. Debugging and Error Handling
+
+### 14.1 Debug layer
+
+Two new files provide the diagnostics layer:
+
+| File | Responsibility |
+|---|---|
+| [`Inc/debug.h`](Inc/debug.h:1) | Build switch, log function declarations, `ASSERT` expression, `UNIT_TEST` stubs |
+| [`Src/debug.c`](Src/debug.c:1) | Variadic log functions, guarded ITM/SWO output, safe `__io_putchar` |
+
+Design rules honoured:
+
+- Logging uses variadic **functions**, not variadic macros, in line with
+  [`gudeline.txt`](Src/.clinerules/gudeline.txt:52).
+- No `goto` is used.
+- Release builds define neither `DEBUG` nor `UNIT_TEST`; the log functions
+  return immediately and ITM code is compiled out.
+- `UNIT_TEST` builds include no HAL headers from [`Inc/debug.h`](Inc/debug.h:1);
+  inline no-op stubs keep the test translation units linkable.
+
+Available calls:
+
+```c
+debug_error("...", ...);   /* [E] */
+debug_warn("...", ...);    /* [W] */
+debug_info("...", ...);    /* [I] */
+debug_debug("...", ...);   /* [D] */
+ASSERT(condition);         /* reports file and line, does not halt */
+```
+
+### 14.2 Safe output
+
+[`Src/debug.c`](Src/debug.c:1) checks `CoreDebug->DHCSR`, `ITM->TCR` and
+`ITM->TER` before every write. If no debugger is attached, or SWV is disabled,
+the data is dropped. The ITM busy wait has a fixed timeout, so a detached
+debugger cannot hang the firmware.
+
+A strong `__io_putchar` is provided in [`Src/debug.c`](Src/debug.c:220), so the
+weak `_write` already present in [`Src/syscalls.c`](Src/syscalls.c:80) becomes
+safe without editing the generated file.
+
+### 14.3 Fault diagnostics
+
+The handlers in [`Src/stm32f4xx_it.c`](Src/stm32f4xx_it.c:86) now select MSP or
+PSP using the `EXC_RETURN` bit, then log:
+
+- `PC`, `LR`, `xPSR`
+- `R0`, `R1`, `R2`, `R3`, `R12`
+- `CFSR`, `HFSR`, `MMFAR`, `BFAR`
+
+The handlers still halt after dumping. [`Error_Handler()`](Src/main.c:616) logs
+a fatal message before halting.
+
+### 14.4 Return-code discipline
+
+HAL results are now checked at these points:
+
+- `HAL_Init` and all timer starts in [`Src/main.c`](Src/main.c:164)
+- Periodic `HAL_ADC_Start_DMA`, reported once per error episode
+- All stop/start calls in [`Src/emergency_stop.c`](Src/emergency_stop.c:5)
+- `CDC_Transmit_FS` results in [`Src/protocol_praser.c`](Src/protocol_praser.c:18)
+
+Invalid arguments are rejected with a log and a safe return in
+[`Src/stepper_motor.c`](Src/stepper_motor.c:14), [`Src/axis.c`](Src/axis.c:38),
+[`Src/circ_buf.c`](Src/circ_buf.c:15), [`Src/usb_praser.c`](Src/usb_praser.c:22),
+[`Src/protocol_praser.c`](Src/protocol_praser.c:32) and
+[`Src/pid.c`](Src/pid.c:19).
+
+### 14.5 Required build configuration
+
+The project files are outside `Core/`, so these settings must be applied
+manually in the IDE build configuration:
+
+| Build config | Preprocessor define | Optimization | Debug level |
+|---|---|---|---|
+| Debug | `DEBUG` | `-O0` | `-g3` |
+| Release | *(none)* | `-Os` | `-g0` |
+
+Also adjust the linker flags as needed:
+
+    -specs=nano.specs
+    -u _printf_float   # only if %f is required
+
+Enable SWV in the debug configuration and turn on ITM stimulus port 0.
+The `SWV ITM Data Console` must be started, otherwise no log output appears.
+
+### 14.6 Verification status
+
+Only a manual syntax review was performed. The code was **not compiled** and
+the unit tests were **not executed**, as requested.
+
+---
+
+## 15. Known Issues (error-path defects left untouched)
+
+The following defects were found while preparing the code for debugging. They
+are documented here instead of being fixed, to keep the existing code logic
+unchanged.
+
+1. [`Src/system_check.c`](Src/system_check.c:37) uses `error_code |= (~0x02)`,
+   which sets almost every bit instead of clearing the timeout bit. The result
+   is `0xFF` even after a successful handshake.
+2. [`Src/protocol_praser.c`](Src/protocol_praser.c:24) checks
+   `circ_buf_capacity()` instead of `circ_buf_avail()`. A queued frame can be
+   silently truncated while the function still reports success.
+3. [`Src/main.c`](Src/main.c:107) uses `ADC_SUM[0]` for both the bed and the
+   print-head PID inputs, and never clears the accumulator after processing.
+4. [`Src/usb_praser.c`](Src/usb_praser.c:36) treats `header[1]` as the total
+   frame size while `read_frame_bytes` already includes the 4-byte header.
+   Frames whose payload is shorter than the header can underflow the unsigned
+   subtraction. The new guard detects and resets, but the framing scheme
+   itself is unchanged.
+5. [`Inc/system_check.h`](Inc/system_check.h:10) declared `getErrorCode()` while
+   the implementation was named `get_error_code()`. A compatibility wrapper was
+   added in [`Src/system_check.c`](Src/system_check.c:52); the original function
+   is unchanged.
+6. [`Src/protocol_praser.c`](Src/protocol_praser.c:106) accepted a
+   `payload_len` of up to 255 into a 12-byte payload array. Malformed frames are
+   now clamped while the byte stream is still drained, but the protocol limit is
+   still not enforced on the host side.
+7. [`Src/syscalls.c`](Src/syscalls.c:80) still contains the standard weak
+   `_write`. It is safe only because [`Src/debug.c`](Src/debug.c:220) supplies a
+   guarded strong `__io_putchar`.
+8. [`Src/main.c`](Src/main.c:222) calls `axis_init()` and starts all timers
+   before `SystemClock_Config()` and the `MX_TIM3_Init()` / `MX_TIM4_Init()`
+   calls. At that point the timer handles are zero-initialized. This ordering
+   is pre-existing and was not changed; it is likely to fault or make every
+   timer-start check fail. The new diagnostics will log the failure, but the
+   order must be corrected in a separate change.
+9. [`Src/main.c`](Src/main.c:223) initializes `header_circ_buf` with
+   `AXIS_BUFFER_SIZE` (1024) although `header_circ_buf_mem` is only
+   `HEADER_BUFFER_SIZE` (512) bytes. The circular buffer therefore advertises
+   twice its real storage. This is pre-existing and was not changed; use
+   `HEADER_BUFFER_SIZE` here in a separate fix.

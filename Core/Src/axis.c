@@ -1,5 +1,6 @@
 #include "axis.h"
 #include "main.h"
+#include "debug.h"
 
 
 stepper_motor_t motor_X;
@@ -44,6 +45,11 @@ inline void process_axis(axis_t axis)
     }
 
     m = axis_map[axis].motor;
+    if ((m == NULL) || (axis_map[axis].buffer == NULL)) {
+        debug_error("process_axis: invalid axis mapping %u\r\n", (unsigned)axis);
+        return;
+    }
+
     check_next_pulse(m);
 
     if (m->step_counter <= 0) {
@@ -58,6 +64,7 @@ inline void process_axis(axis_t axis)
 void axis_init(TIM_HandleTypeDef *const tim_handler)
 {
     if (tim_handler == NULL) {
+        debug_error("axis_init: NULL timer handle\r\n");
         return;
     }
 
