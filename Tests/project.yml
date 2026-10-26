@@ -98,12 +98,12 @@
 :paths:
   :test:
     - +:test/**
-  #  - -:test/support
+    - -:test/support
   :source:
     - ../Core/Src/**
   :include:
     - ../Core/Inc** # In simple projects, this entry often duplicates :source
-  #  - test/support
+    - test/support
   :libraries: []
 
 # You can even specify specific files to add or remove from your test
