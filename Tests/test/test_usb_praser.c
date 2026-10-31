@@ -38,6 +38,193 @@ void test_init_rejects_null_handle(void)
     usb_praser_init((circ_buf_t){0}, generic_buf);
 }
 
+
+void test_frame_size_is_equal_to_buffer(void){
+    uint8_t in1[4] = 
+    { 0x07, 0x04, 0x0, 0x01,
+      0x01, 0x02, 0x03, 0x04};
+
+    read_usb_praser(hdr, sizeof(in1));
+
+    uint8_t in2[4] = 
+    { 0x07, 0x04, 0x0, 0x02,
+      0x05, 0x06, 0x07, 0x08};
+
+    read_usb_praser(hdr, sizeof(in2));
+
+    uint8_t in3[4] = 
+    { 0x07, 0x04, 0x0, 0x03,
+      0x09, 0x10, 0x11, 0x12};
+
+    read_usb_praser(hdr, sizeof(in3));
+
+    uint32_t expected_payload[12] = {
+        0x01, 0x02, 0x03, 0x04,
+        0x05, 0x06, 0x07, 0x08,
+        0x09, 0x10, 0x11, 0x12,
+    }
+
+    uint32_t expected_header[12] = {
+        0x07, 0x04, 0x00, 0x01,
+        0x07, 0x04, 0x00, 0x01,
+        0x07, 0x04, 0x00, 0x03,
+    }
+
+    uint32_t payload[12];
+    uint32_t header[12];
+
+    circ_buf_push_many_uint8(header_buf, header, 12);
+    circ_buf_push_many_uint8(axis_map[1].buffer, header, 12);
+
+    TEST_ASSERT_EQUAL_UINT8_ARRAY(expected_header, header, 12U);
+    TEST_ASSERT_EQUAL_UINT8_ARRAY(expected_payload, payload, 12U);
+}
+
+void test_header_size_is_same_size_as_buffor(void){
+
+    uint8_t in1[4] = {
+        0x07, 0x04, 0x00, 0x01};
+
+    read_usb_praser(in1, sizeof(in1));
+
+    uint8_t in2[4] = {
+        0x01, 0x02, 0x03, 0x04};
+
+    read_usb_praser(in2, sizeof(in2));
+
+
+    uint8_t in3[4] = {
+        0x07, 0x04, 0x00, 0x02};
+
+    read_usb_praser(in3, sizeof(in3));
+
+    uint8_t in4[4] = {
+        0x05, 0x06, 0x07, 0x08};
+
+    read_usb_praser(in4, sizeof(in4));
+
+    uint32_t expected_payload[12] = {
+        0x01, 0x02, 0x03, 0x04,
+        0x05, 0x06, 0x07, 0x08
+    }
+
+    uint32_t expected_header[12] = {
+        0x07, 0x04, 0x00, 0x01,
+        0x07, 0x04, 0x00, 0x01
+    }
+
+    circ_buf_push_many_uint8(header_buf, header, 8);
+    circ_buf_push_many_uint8(axis_map[1].buffer, header, 8);
+
+    uint32_t payload[8];
+    uint32_t header[8];
+
+    TEST_ASSERT_EQUAL_UINT8_ARRAY(expected_header, header, 8U);
+    TEST_ASSERT_EQUAL_UINT8_ARRAY(expected_payload, payload, 8U);
+}
+
+void test_heder_size_is_twice_large_as_buffor(void){
+    uint8_t in1[2] = {0x07, 0x04};
+    uint8_t in2[2] = {0x00, 0x01};
+
+    read_usb_praser(in1, sizeof(in1));
+    read_usb_praser(in2, sizeof(in2));
+
+    uint8_t in3[2] = {0x01, 0x02};
+    uint8_t in4[2] = {0x03, 0x04};
+
+    read_usb_praser(in5, sizeof(in5));
+    read_usb_praser(in6, sizeof(in6));
+
+    uint8_t in7[2] = {0x07, 0x04};
+    uint8_t in8[2] = {0x00, 0x02};
+
+    read_usb_praser(in7, sizeof(in7));
+    read_usb_praser(in8, sizeof(in8));
+
+    uint8_t in9[2] = {0x05, 0x06};
+    uint8_t in10[2] = {0x07, 0x08};
+
+    read_usb_praser(in9, sizeof(in9));
+    read_usb_praser(in10, sizeof(in10));
+
+    circ_buf_push_many_uint8(header_buf, header, 8);
+    circ_buf_push_many_uint8(axis_map[1].buffer, header, 8);
+
+    uint32_t payload[8];
+    uint32_t header[8];
+
+    TEST_ASSERT_EQUAL_UINT8_ARRAY(expected_header, header, 8U);
+    TEST_ASSERT_EQUAL_UINT8_ARRAY(expected_payload, payload, 8U);
+
+}
+
+void test_hardware_buffer_size_3_bytes_two_frames_payload_8_bytes(void)
+{
+    uint8_t in1[3] = {
+        0x07, 0x08, 0x00
+    };
+    read_usb_praser(in1, sizeof(in1));
+
+    uint8_t in2[3] = {
+        0x01, 0x01, 0x02
+    };
+    read_usb_praser(in2, sizeof(in2));
+
+    uint8_t in3[3] = {
+        0x03, 0x04, 0x05
+    };
+    read_usb_praser(in3, sizeof(in3));
+
+    uint8_t in4[3] = {
+        0x06, 0x07, 0x08
+    };
+    read_usb_praser(in4, sizeof(in4));
+
+    uint8_t in5[3] = {
+        0x07, 0x08, 0x00
+    };
+    read_usb_praser(in5, sizeof(in5));
+
+    uint8_t in6[3] = {
+        0x02, 0x09, 0x0A
+    };
+    read_usb_praser(in6, sizeof(in6));
+
+    uint8_t in7[3] = {
+        0x0B, 0x0C, 0x0D
+    };
+    read_usb_praser(in7, sizeof(in7));
+
+    uint8_t in8[3] = {
+        0x0E, 0x0F, 0x10
+    };
+    read_usb_praser(in8, sizeof(in8));
+
+    uint8_t expected_header[8] = {
+        0x07, 0x08, 0x00, 0x01,
+        0x07, 0x08, 0x00, 0x02
+    };
+
+    uint8_t expected_payload[16] = {
+        0x01, 0x02, 0x03, 0x04,
+        0x05, 0x06, 0x07, 0x08,
+        0x09, 0x0A, 0x0B, 0x0C,
+        0x0D, 0x0E, 0x0F, 0x10
+    };
+
+    uint8_t header[8];
+    uint8_t payload[16];
+
+    circ_buf_pop_many_uint8(header_buf, header, 8);
+    circ_buf_pop_many_uint8(axis_map[1].buffer, payload, 16);
+
+    TEST_ASSERT_EQUAL_UINT8_ARRAY(expected_header, header, 8U);
+    TEST_ASSERT_EQUAL_UINT8_ARRAY(expected_payload, payload, 16U);
+}
+
+
+
 void test_header_is_pushed_to_header_buffer(void)
 {
     uint8_t hdr[4] = { 1U, 8U, 0U, 0U };
@@ -48,6 +235,70 @@ void test_header_is_pushed_to_header_buffer(void)
     uint8_t out[4];
     TEST_ASSERT_EQUAL_UINT32(4U, circ_buf_pop_many(header_buf, out, 4U));
     TEST_ASSERT_EQUAL_UINT8_ARRAY(hdr, out, 4U);
+}
+
+void test_hardware_buffer_size_3_bytes_three_frames_payload_4_bytes(void)
+{
+    uint8_t in1[3] = {
+        0x07, 0x04, 0x00
+    };
+    read_usb_praser(in1, sizeof(in1));
+
+    uint8_t in2[3] = {
+        0x01, 0x01, 0x02
+    };
+    read_usb_praser(in2, sizeof(in2));
+
+    uint8_t in3[3] = {
+        0x03, 0x04, 0x07
+    };
+    read_usb_praser(in3, sizeof(in3));
+
+    uint8_t in4[3] = {
+        0x04, 0x00, 0x02
+    };
+    read_usb_praser(in4, sizeof(in4));
+
+    uint8_t in5[3] = {
+        0x05, 0x06, 0x07
+    };
+    read_usb_praser(in5, sizeof(in5));
+
+    uint8_t in6[3] = {
+        0x08, 0x07, 0x04
+    };
+    read_usb_praser(in6, sizeof(in6));
+
+    uint8_t in7[3] = {
+        0x00, 0x03, 0x09
+    };
+    read_usb_praser(in7, sizeof(in7));
+
+    uint8_t in8[3] = {
+        0x0A, 0x0B, 0x0C
+    };
+    read_usb_praser(in8, sizeof(in8));
+
+    uint8_t expected_header[12] = {
+        0x07, 0x04, 0x00, 0x01,
+        0x07, 0x04, 0x00, 0x02,
+        0x07, 0x04, 0x00, 0x03
+    };
+
+    uint8_t expected_payload[12] = {
+        0x01, 0x02, 0x03, 0x04,
+        0x05, 0x06, 0x07, 0x08,
+        0x09, 0x0A, 0x0B, 0x0C
+    };
+
+    uint8_t header[12];
+    uint8_t payload[12];
+
+    circ_buf_pop_many_uint8(header_buf, header, 12);
+    circ_buf_pop_many_uint8(axis_map[1].buffer, payload, 12);
+
+    TEST_ASSERT_EQUAL_UINT8_ARRAY(expected_header, header, 12U);
+    TEST_ASSERT_EQUAL_UINT8_ARRAY(expected_payload, payload, 12U);
 }
 
 void test_payload_for_axis_x(void)
